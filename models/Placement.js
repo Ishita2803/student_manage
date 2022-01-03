@@ -3,11 +3,11 @@ const Schema = mongoose.Schema;
 // Create Schema
 const PlacementSchema = new Schema({
   marks12: {
-    type: NumberDecimal,
+    type: Number,
     required: true
   },
   cgpa: {
-    type: NumberDecimal,
+    type: Number,
     required: true
   },
   activeKt: {

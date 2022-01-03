@@ -3,11 +3,11 @@ const Schema = mongoose.Schema;
 // Create Schema
 const HigherStudiesSchema = new Schema({
   marks12: {
-    type: NumberDecimal,
+    type: Number,
     required: true
   },
   cgpa: {
-    type: NumberDecimal,
+    type: Number,
     required: true
   },
   activeKt: {
@@ -31,4 +31,4 @@ const HigherStudiesSchema = new Schema({
       required:true
   }
 });
-module.exports = HigherStudies = mongoose.model("higherStudies", PlacementSchema);
+module.exports = HigherStudies = mongoose.model("higherStudies", HigherStudiesSchema);
