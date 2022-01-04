@@ -109,3 +109,13 @@ a{
     text-decoration: none;
 
 }
+
+.float-container {
+    padding: 3px;
+}
+.float-child {
+    width: 50%;
+    float: left;
+    padding: 2px;
+    
+}  
