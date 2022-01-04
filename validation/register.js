@@ -4,9 +4,14 @@ module.exports = function validateRegisterInput(data) {
   let errors = {};
 // Convert empty fields to an empty string so we can use validator functions
   data.name = !isEmpty(data.name) ? data.name : "";
+  data.prn = !isEmpty(data.prn) ? data.prn : "";
   data.email = !isEmpty(data.email) ? data.email : "";
   data.password = !isEmpty(data.password) ? data.password : "";
   data.password2 = !isEmpty(data.password2) ? data.password2 : "";
+  data.branch = !isEmpty(data.branch) ? data.branch : "";
+  data.year = !isEmpty(data.year) ? data.year : "";
+
+
 // Name checks
   if (Validator.isEmpty(data.name)) {
     errors.name = "Name field is required";
@@ -29,6 +34,15 @@ if (!Validator.isLength(data.password, { min: 6, max: 30 })) {
   }
 if (!Validator.equals(data.password, data.password2)) {
     errors.password2 = "Passwords must match";
+  }
+  if (Validator.isEmpty(data.branch)) {
+    errors.branch = "Branch field required";
+  }
+  if (Validator.isEmpty(data.year)) {
+    errors.year = "Year field required";
+  }
+  if (Validator.isEmpty(data.PRN)) {
+    errors.PRN = "PRN field requiredd";
   }
 
 return {

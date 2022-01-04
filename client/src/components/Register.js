@@ -13,6 +13,9 @@ class register extends Component {
             email:'',
             password:'',
             password2: '',
+            PRN:'',
+            branch:'',
+            year:''
         }
         this.inputRef = React.createRef()
     }
@@ -37,6 +40,24 @@ class register extends Component {
             email : event.target.value
         })
     }
+    handleYear = event =>{
+        this.setState({
+            year : event.target.value
+        })
+    }
+    handleBranch = event =>{
+        this.setState({
+            branch : event.target.value
+        })
+    }
+    handlePrn = event =>{
+        this.setState({
+            prn : event.target.value
+        })
+    }
+    
+    
+    
     
     handleSubmit= (event)=> {
         event.preventDefault()
@@ -45,6 +66,9 @@ class register extends Component {
             email:this.state.email,
             password:this.state.password,
             password2:this.state.password2,
+            prn:this.state.prn,
+            branch:this.state.branch,
+            year: this.state.year
         }
         axios.post(`http://localhost:5000/api/users/register`,user)
         .then(res=>{
@@ -60,49 +84,72 @@ class register extends Component {
         this.inputRef.current.focus()
     }
         render() {
-            const {name,email,password,password2}= this.state
+            const {name,email,password,password2,year,prn,branch}= this.state
             return (
                 <>
-                <h2 className="align">Registration Page</h2>
+                <div class="background">
+                    <div class="shape"></div>
+                    <div class="shape"></div>
+                </div>
+                
+                
                 <center>
-                <form onSubmit={this.handleSubmit} > 
-                    <div>
+                <form onSubmit={this.handleSubmit} style={{height: "690px", width: "600px"}}> 
+                    <h3>Registration Page</h3>
+                    
                         <label>Name : </label>
                         <input type="text" ref={this.inputRef} 
-                        value={name}
-                        onChange={this.handlename} required/>
-                    </div>
-                    <br></br>
-                    <div>
+                        value={name} 
+                        onChange={this.handlename}
+                        placeholder='Name' required />
+
+                        <label>PRN : </label>
+                        <input type="text" 
+                        value={prn} 
+                        onChange={this.handlePRN}
+                        placeholder='prn' required />
+
+                        <span>
+                        <label>Year: </label>
+                        <input type="text" 
+                        value={year} 
+                        onChange={this.handleYear}
+                        placeholder='Year' required />
+                        </span>
+
+                        <span>
+                        <label>Branch: </label>
+                        <input type="text" 
+                        value={branch} 
+                        onChange={this.handleBranch}
+                        placeholder='Branch' required />
+                        </span>
+                    
                         <label>Email ID : </label>
                         <input type="email" 
+                        placeholder='Email id'
                         value={email}
                         onChange={this.handleEmail} required/>
-                    </div>
-                    <br></br>
-                    <div>
+                   
                         <label>Password : </label>
                         <input type="password" 
+                        placeholder='Password'
                         value={password}
                         onChange={this.handlePassword} required/>
-                    </div>
-                    <br></br>
-                    <div>
+                    
                         <label>Confim password : </label>
                         <input type="password" 
+                        placeholder='Confirm password'
                         value={password2}
                         onChange={this.handleCpass} required/>
-                    </div>
-                    <br></br>
-                    <div>
-                        <button className="btn btn-dark" type="submit">Submit</button>
-                    </div>
-                    <br></br>
-                    <br></br>
-                    <div>
-                        <a href="/login">Go to Login Page</a>
-                    </div>
-                </form>
+                    
+                        <button type="submit">Submit</button>
+                        <div class="social">
+                        <a href="/login"> Already an Account ?  Click here</a>
+                        </div>
+                        
+                    
+                    </form>
                 </center>
                 </>
             )

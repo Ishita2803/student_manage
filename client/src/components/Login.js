@@ -45,33 +45,34 @@ class login extends Component {
     render() {
         return (
             <>
-            <h2 className="align">Login Page</h2>
-            <center>
-            <form onSubmit={this.handleSubmit}>
-                <div>
+            <div class="background">
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+            
+            <form onSubmit={this.handleSubmit} style={{height: "400px", width: "500px"}}>
+            <h3 className="align">Login Here</h3>
+
+                
                     <label>Email ID: </label>
                     <input type="email" 
                     value={this.state.email}
                     onChange={this.handleEmail}required />
-                </div>
-                <br></br>
-                <div>
+                
                     <label>Password : </label>
                     <input type="password" 
                     value={this.state.password}
                     onChange={this.handlePassword} required />
-                </div>
-                <br></br>
-                <div>
-                    <button className="btn btn-dark" type="submit">Login</button>
-                </div>
-                <br></br>
-                <br></br>
-                <div>
-                    <a href="/">Go to Registration Page</a>
-                </div>
+                <br/>
+                    <button type="submit">Login</button>
+                    <div class="social">
+                        <div className='fb'> <a href='/admin'> ADMIN </a> </div>
+                        <div className='fb'> <a href="/">REGISTER</a></div>
+                        </div>
+                    
+                
             </form>
-            </center>
+            
             </>
         )
     }

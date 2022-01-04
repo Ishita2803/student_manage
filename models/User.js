@@ -6,11 +6,23 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
+  prn: {
+    type: String,
+    required: true
+  },
   email: {
     type: String,
     required: true
   },
   password: {
+    type: String,
+    required: true
+  },
+  branch: {
+    type: String,
+    required: true
+  },
+  year: {
     type: String,
     required: true
   },

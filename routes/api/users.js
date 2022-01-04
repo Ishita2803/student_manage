@@ -23,8 +23,11 @@ router.post("/register", (req, res) => {
         let newUser1;
         const newUser = new User({
           name: req.body.name,
+          prn: req.body.prn,
           email: req.body.email,
           password: req.body.password,
+          branch: req.body.branch,
+          year: req.body.year,
         });
   // Hash password before saving in database
         bcrypt.genSalt(10, (err, salt) => {
