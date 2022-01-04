@@ -94,7 +94,7 @@ class register extends Component {
                 
                 
                 <center>
-                <form onSubmit={this.handleSubmit} style={{height: "690px", width: "600px"}}> 
+                <form onSubmit={this.handleSubmit} style={{height: "610px", width: "600px"}}> 
                     <h3>Registration Page</h3>
                     
                         <label>Name : </label>
@@ -109,21 +109,29 @@ class register extends Component {
                         onChange={this.handlePRN}
                         placeholder='prn' required />
 
-                        <span>
-                        <label>Year: </label>
-                        <input type="text" 
-                        value={year} 
-                        onChange={this.handleYear}
-                        placeholder='Year' required />
-                        </span>
+                        <div class="float-container">
+                            <div class="float-child"><label>Year:</label></div>
+                      
+                                   <div class="float-child"><label>Branch:</label></div>
+                        </div>
 
-                        <span>
-                        <label>Branch: </label>
-                        <input type="text" 
-                        value={branch} 
-                        onChange={this.handleBranch}
-                        placeholder='Branch' required />
-                        </span>
+                        <div class="float-container">
+                            <div class="float-child">
+                                <input type="text" 
+                                    value={year} 
+                                    onChange={this.handleYear}
+                                    placeholder='Year' required />
+                                </div>
+                            
+                        
+                            <div class="float-child"><input type="text" 
+                                value={branch} 
+                                onChange={this.handleBranch}
+                                placeholder='Branch' required style={{marginBottom:""}}/>
+                            </div>
+                     
+                        
+                        </div>
                     
                         <label>Email ID : </label>
                         <input type="email" 
