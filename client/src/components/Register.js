@@ -13,7 +13,7 @@ class register extends Component {
             email:'',
             password:'',
             password2: '',
-            PRN:'',
+            prn:'',
             branch:'',
             year:''
         }
@@ -50,7 +50,7 @@ class register extends Component {
             branch : event.target.value
         })
     }
-    handlePrn = event =>{
+    handlePRN = event =>{
         this.setState({
             prn : event.target.value
         })

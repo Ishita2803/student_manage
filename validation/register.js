@@ -41,8 +41,8 @@ if (!Validator.equals(data.password, data.password2)) {
   if (Validator.isEmpty(data.year)) {
     errors.year = "Year field required";
   }
-  if (Validator.isEmpty(data.PRN)) {
-    errors.PRN = "PRN field requiredd";
+  if (Validator.isEmpty(data.prn)) {
+    errors.prn = "PRN field requiredd";
   }
 
 return {
