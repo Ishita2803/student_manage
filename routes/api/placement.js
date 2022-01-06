@@ -5,12 +5,15 @@ const User = require("../../models/Placement");
 
 router.post("/form", async(req, res) => {
     const newUser = new User({
-        marks12: req.body.marks12,
-        cgpa: req.body.cgpa,
-        activeKt: req.body.activeKt,
         company: req.body.company,
+        companydescription: req.body.companydescription,
         location: req.body.location,
+        startdate: req.body.startdate,
+        enddate: req.body.enddate,
+        jobdescription: req.body.jobdescription,
+        cgpa: req.body.cgpa,
         branch: req.body.branch,
+        link: req.body.link,
       });
       try {
         const data= await newUser.save()
@@ -21,5 +24,6 @@ router.post("/form", async(req, res) => {
         });
     }
   });
+
 
   module.exports = router;

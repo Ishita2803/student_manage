@@ -7,6 +7,7 @@ import Home from './components/Home';
 import Register from './components/Register';
 import Admin from './components/Admin';
 import AdminHome from './components/AdminHome';
+import Placement from './components/Placement';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Route exact path="/home" component={Home}/>
       <Route exact path="/admin" component={Admin}/>
       <Route exact path="/admin/home" component={AdminHome}/>
+      <Route exact path="/admin/placement" component={Placement}/>
     </Switch>
     </BrowserRouter>
     </div>

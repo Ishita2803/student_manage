@@ -1,12 +1,17 @@
 import React, { Component } from 'react'
 import {withRouter} from 'react-router-dom'
-import axios from 'axios'
 
 export class AdminHome extends Component {
+    handlePlacement= event=>{
+        event.preventDefault()
+        this.props.history.push('./placement')
+    }
     render() {
         return (
             <div>
-                <h1 style={{color:"white"}}>Welcome Admin</h1>
+                <button className="btn btn-dark" onClick={this.handlePreplace}>Pre-placement</button>
+                <button className="btn btn-dark" onClick={this.handlePlacement}>placement</button>
+                <button className="btn btn-dark" onClick={this.handleHigher}>Higher Studies</button>
             </div>
         )
     }
