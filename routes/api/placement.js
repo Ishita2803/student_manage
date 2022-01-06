@@ -25,5 +25,16 @@ router.post("/form", async(req, res) => {
     }
   });
 
+router.get("/view", async(req,res)=>{
+    try {
+        const data=await User.find()
+        res.send(data)
+        console.log(req.body);
+    } catch (err) {
+        res.status(500).send({
+            message: err.message || "Some error occurred while retrieving users."
+            });
+    }
+})
 
   module.exports = router;
