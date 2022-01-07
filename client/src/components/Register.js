@@ -19,45 +19,11 @@ class register extends Component {
         }
         this.inputRef = React.createRef()
     }
-    handlename= event =>{
+    handleOnChange=(event)=>{
         this.setState({
-            name: event.target.value
-        })
+            [event.target.name]:event.target.value
+        });
     }
-    handleCpass= event =>{
-        this.setState({
-            password2: event.target.value
-        })
-    }
-    handlePassword= event =>{
-        this.setState({
-            password : event.target.value
-        })
-    }
-    
-    handleEmail = event =>{
-        this.setState({
-            email : event.target.value
-        })
-    }
-    handleYear = event =>{
-        this.setState({
-            year : event.target.value
-        })
-    }
-    handleBranch = event =>{
-        this.setState({
-            branch : event.target.value
-        })
-    }
-    handlePRN = event =>{
-        this.setState({
-            prn : event.target.value
-        })
-    }
-    
-    
-    
     
     handleSubmit= (event)=> {
         event.preventDefault()
@@ -73,7 +39,7 @@ class register extends Component {
         axios.post(`http://localhost:5000/api/users/register`,user)
         .then(res=>{
             if(Object.values(res.data)[0]=== this.state.name) {
-                alert('Registration successful')
+                alert('Registration successful');
             }
             else{
                 alert(Object.values(res.data)[0]);
@@ -100,13 +66,15 @@ class register extends Component {
                         <label>Name : </label>
                         <input type="text" ref={this.inputRef} 
                         value={name} 
-                        onChange={this.handlename}
+                        name='name'
+                        onChange={this.handleOnChange}
                         placeholder='Name' required />
 
                         <label>PRN : </label>
                         <input type="text" 
                         value={prn} 
-                        onChange={this.handlePRN}
+                        name='prn'
+                        onChange={this.handleOnChange}
                         placeholder='prn' required />
 
                         <div class="float-container">
@@ -119,14 +87,16 @@ class register extends Component {
                             <div class="float-child">
                                 <input type="text" 
                                     value={year} 
-                                    onChange={this.handleYear}
+                                    name='year'
+                                    onChange={this.handleOnChange}
                                     placeholder='Year' required />
                                 </div>
                             
                         
                             <div class="float-child"><input type="text" 
                                 value={branch} 
-                                onChange={this.handleBranch}
+                                name='branch'
+                                onChange={this.handleOnChange}
                                 placeholder='Branch' required style={{marginBottom:""}}/>
                             </div>
                      
@@ -137,19 +107,22 @@ class register extends Component {
                         <input type="email" 
                         placeholder='Email id'
                         value={email}
-                        onChange={this.handleEmail} required/>
+                        name='email'
+                        onChange={this.handleOnChange} required/>
                    
                         <label>Password : </label>
                         <input type="password" 
                         placeholder='Password'
                         value={password}
-                        onChange={this.handlePassword} required/>
+                        name='password'
+                        onChange={this.handleOnChange} required/>
                     
                         <label>Confim password : </label>
                         <input type="password" 
                         placeholder='Confirm password'
+                        name='password2'
                         value={password2}
-                        onChange={this.handleCpass} required/>
+                        onChange={this.handleOnChange} required/>
                     
                         <button type="submit">Submit</button>
                         <div class="social">

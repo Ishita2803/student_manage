@@ -11,15 +11,10 @@ export class Admin extends Component {
             password :''
         }
     }
-    handleEmail= event =>{
+    handleOnClick=(event)=>{
         this.setState({
-            email: event.target.value
-        })
-    }
-    handlePassword= event =>{
-        this.setState({
-            password : event.target.value
-        })
+            [event.target.name]:event.target.value
+        });
     }
     handleSubmit= event =>{
         event.preventDefault()
@@ -42,13 +37,15 @@ export class Admin extends Component {
 
                     <label>Email ID: </label>
                     <input type="email" 
+                    name='email'
                     value={this.state.email}
-                    onChange={this.handleEmail}required />
+                    onChange={this.handleOnClick}required />
 
                     <label>Password: </label>
                     <input type="password" 
+                    name='password'
                     value={this.state.password}
-                    onChange={this.handlePassword} required/>
+                    onChange={this.handleOnClick} required/>
                     <br />
                     <button type="submit">Login</button>
                     
