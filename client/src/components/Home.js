@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import {withRouter} from 'react-router-dom'
 import Checkbox from "./Checkbox";
+import axios from 'axios'
 
 
-const items = ["Pre-Placement", "placement", "Higher Studies"];
+const items = ["preplacement", "placement", "higherstudies"];
 
 export class Home extends Component {
     componentWillMount = () => {
-        const {state} = this.props.location
         this.selectedCheckboxes = new Set();
     }
     
@@ -25,6 +25,14 @@ export class Home extends Component {
         for (const checkbox of this.selectedCheckboxes) {
             
         console.log(checkbox, 'is selected.');
+        const {state} = this.props.location
+        user={
+            checkbox:true
+        }
+        axios.put(`http://localhost:5000/api/users/register/${state}`,user)
+        .then(res=>{
+            console.log(res.data);
+            } ).catch(err=> alert(err))
         }
     }
     
