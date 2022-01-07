@@ -3,10 +3,11 @@ import {withRouter} from 'react-router-dom'
 import Checkbox from "./Checkbox";
 
 
-const items = ["Pre-Placement", "Placement", "Higher Studies"];
+const items = ["Pre-Placement", "placement", "Higher Studies"];
 
 export class Home extends Component {
     componentWillMount = () => {
+        const {state} = this.props.location
         this.selectedCheckboxes = new Set();
     }
     

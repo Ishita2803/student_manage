@@ -79,7 +79,8 @@ const email = req.body.email;
           (err, token) => {
             res.json({
               success: true,
-              token: "Bearer " + token
+              token: "Bearer " + token,
+              id :user.id
             });
           }
         );
@@ -92,6 +93,16 @@ const email = req.body.email;
   });
 });
 
+router.put('/register/:id',async(req,res)=>{
+  try {
+      const user = await User.findById(req.params.id)
+      user.placement = req.body.placement
+      const data = await user.save()
+      res.json(data)
+  } catch (error) {
+      res.send('Error')
+  }
+})
 
 
 module.exports = router;

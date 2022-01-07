@@ -33,6 +33,14 @@ const UserSchema = new Schema({
   placement:{
     type: Boolean,
     default: false
+  },
+  preplacement:{
+    type: Boolean,
+    default: false
+  },
+  higherstudies:{
+    type: Boolean,
+    default: false
   }
 });
 module.exports = User = mongoose.model("users", UserSchema);

@@ -33,7 +33,10 @@ class login extends Component {
         axios.post(`http://localhost:5000/api/users/login`,user)
         .then(res=>{ 
             if(Object.values(res.data)[0]=== true){
-                this.props.history.push('./home')
+                this.props.history.push({
+                    pathname:"./home",
+                    state: Object.values(res.data)[2]
+                })
             }
             else{
                 alert(Object.values(res.data)[0]);
