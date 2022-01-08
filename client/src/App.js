@@ -9,6 +9,7 @@ import Admin from './components/Admin';
 import AdminHome from './components/AdminHome';
 import Placement from './components/Placement';
 import PlacementUser from './components/PlacementUser';
+import Info from './components/Info';
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
       <Route exact path="/admin/home" component={AdminHome}/>
       <Route exact path="/admin/placement" component={Placement}/>
       <Route exact path="/placement" component={PlacementUser}/>
-
+      <Route exact path="/info" component={Info}/>
     </Switch>
     </BrowserRouter>
     </div>

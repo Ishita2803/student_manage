@@ -100,7 +100,7 @@ router.put('/placement/:id',async(req,res)=>{
       const data = await user.save()
       res.json(data)
   } catch (error) {
-      res.send('Error')
+      res.send(error)
   }
 })
 router.put('/preplacement/:id',async(req,res)=>{
@@ -110,7 +110,7 @@ router.put('/preplacement/:id',async(req,res)=>{
       const data = await user.save()
       res.json(data)
   } catch (error) {
-      res.send('Error')
+      res.send(error)
   }
 })
 router.put('/higherstudies/:id',async(req,res)=>{
@@ -120,8 +120,23 @@ router.put('/higherstudies/:id',async(req,res)=>{
       const data = await user.save()
       res.json(data)
   } catch (error) {
-      res.send('Error')
+      res.send(error)
   }
+})
+
+router.get('/register/:id',async(req,res)=>{
+  try {
+    const data = await User.findById(req.params.id)
+    if(!data) {
+        return res.status(404).send({
+            message: "User not found with id " + req.params.id
+        });   };
+    res.send(data)
+} catch (error) {
+    res.status(500).send({
+        message: "Error retrieving user with id " + req.params.id
+    });
+}
 })
 
 

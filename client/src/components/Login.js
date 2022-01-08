@@ -3,7 +3,6 @@ import './form.css'
 import {withRouter} from 'react-router-dom'
 import axios from 'axios'
 
-
 class login extends Component {
     constructor(props) {
         super(props)
@@ -33,9 +32,22 @@ class login extends Component {
         axios.post(`http://localhost:5000/api/users/login`,user)
         .then(res=>{ 
             if(Object.values(res.data)[0]=== true){
-                this.props.history.push({
-                    pathname:"./home",
-                    state: Object.values(res.data)[2]
+                const id =Object.values(res.data)[2]
+                axios.get(`http://localhost:5000/api/users/register/${id}`)
+                .then(res1=>{
+                    const loguser=res1.data;
+                    if(loguser.preplacement || loguser.placement || loguser.higherstudies){
+                        this.props.history.push({
+                            pathname:"./info",
+                            state: id
+                        })
+                    }
+                    else{
+                        this.props.history.push({
+                            pathname:"./home",
+                            state: id
+                        })
+                    }
                 })
             }
             else{
