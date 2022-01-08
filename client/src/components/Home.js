@@ -21,10 +21,10 @@ export class Home extends Component {
     
     handleFormSubmit = async(formSubmitEvent) => {
         formSubmitEvent.preventDefault();
+        const {state} = this.props.location
         for (const checkbox of this.selectedCheckboxes) {
             
         console.log(checkbox, 'is selected.');
-        const {state} = this.props.location
         let user
         if(checkbox==='Pre-Placement'){
             user={
@@ -46,6 +46,10 @@ export class Home extends Component {
             console.log(res.data);
             } ).catch(err=> alert(err))
         }
+        this.props.history.push({
+            pathname:"./info",
+            state: state
+        })
     }
     
     createCheckbox = label => (

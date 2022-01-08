@@ -40,6 +40,7 @@ class register extends Component {
         .then(res=>{
             if(Object.values(res.data)[0]=== this.state.name) {
                 alert('Registration successful');
+                this.props.history.push("./login");
             }
             else{
                 alert(Object.values(res.data)[0]);

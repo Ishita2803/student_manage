@@ -23,7 +23,8 @@ export class PlacementUser extends Component {
     render() {
         return (
             <div>
-                {this.state.contents.map(content=>
+                <h1>Placement</h1>
+                {this.state.contents.reverse().map(content=>
                 <div key={content._id} style={{color:"white"}}>
                     <h3>{content.company}</h3>
                     <p>{content.companydescription} </p>
