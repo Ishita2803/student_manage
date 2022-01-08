@@ -4,7 +4,7 @@ import Checkbox from "./Checkbox";
 import axios from 'axios'
 
 
-const items = ["preplacement", "placement", "higherstudies"];
+const items = ["Pre-Placement", "Placement", "Higher Studies"];
 
 export class Home extends Component {
     componentWillMount = () => {
@@ -19,17 +19,29 @@ export class Home extends Component {
         }
     }
     
-    handleFormSubmit = formSubmitEvent => {
+    handleFormSubmit = async(formSubmitEvent) => {
         formSubmitEvent.preventDefault();
-    
         for (const checkbox of this.selectedCheckboxes) {
             
         console.log(checkbox, 'is selected.');
         const {state} = this.props.location
-        user={
-            checkbox:true
+        let user
+        if(checkbox==='Pre-Placement'){
+            user={
+            preplacement:true,
         }
-        axios.put(`http://localhost:5000/api/users/register/${state}`,user)
+        }
+        else if(checkbox==='Placement'){
+            user={
+                placement:true
+            }
+        }
+        else if(checkbox==='Higher Studies'){
+            user={
+                higherstudies:true
+            }
+        }
+        await axios.put(`http://localhost:5000/api/users/${checkbox.toLowerCase().replace(/[^A-Z0-9]/ig, "")}/${state}`,user)
         .then(res=>{
             console.log(res.data);
             } ).catch(err=> alert(err))

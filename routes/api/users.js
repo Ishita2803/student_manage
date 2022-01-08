@@ -93,10 +93,30 @@ const email = req.body.email;
   });
 });
 
-router.put('/register/:id',async(req,res)=>{
+router.put('/placement/:id',async(req,res)=>{
   try {
       const user = await User.findById(req.params.id)
       user.placement = req.body.placement
+      const data = await user.save()
+      res.json(data)
+  } catch (error) {
+      res.send('Error')
+  }
+})
+router.put('/preplacement/:id',async(req,res)=>{
+  try {
+      const user = await User.findById(req.params.id)
+      user.preplacement = req.body.preplacement
+      const data = await user.save()
+      res.json(data)
+  } catch (error) {
+      res.send('Error')
+  }
+})
+router.put('/higherstudies/:id',async(req,res)=>{
+  try {
+      const user = await User.findById(req.params.id)
+      user.higherstudies = req.body.higherstudies
       const data = await user.save()
       res.json(data)
   } catch (error) {
