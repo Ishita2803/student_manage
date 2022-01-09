@@ -18,11 +18,11 @@ export class PlacementUser extends Component {
             const contents=res.data
             this.setState({contents})
         })
-    }
+    } 
 
     render() {
         return (
-            <div>
+            <div class="card" style={{width : "18rem"}}>
                 <h1>Placement</h1>
                 {this.state.contents.reverse().map(content=>
                 <div key={content._id} style={{color:"white"}}>
