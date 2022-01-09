@@ -86,6 +86,11 @@ class register extends Component {
 
                         <div class="float-container">
                             <div class="float-child">
+                                {/* <select class="form-select">
+                                <option selected> Enter year </option>
+                                    <option value=''> TE </option>
+                                    <option value=''> BE </option>
+                                </select> */}
                                 <input type="text" 
                                     value={year} 
                                     name='year'
