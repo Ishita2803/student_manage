@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import './Styles/mainpage.css'
+import './Styles/login.css'
+import logo from './logo.png'
 import {withRouter} from 'react-router-dom'
 import axios from 'axios'
 
@@ -60,6 +62,15 @@ class login extends Component {
     render() {
         return (
             <>
+            <header className='loginhead'>
+	            <div className="overlay">     
+                <div className='logohead'>
+                        <img src={logo} alt="logo" width="90" height="70"/>
+                        <h1 className='loginh1'>SIES GRADUATE SCHOOL OF TECHNOLOGY</h1>
+                    </div>
+                        <h5 className='loginh3'>Students can choose their preference accordingly</h5>
+                </div>
+            </header>
             <div class="background">
                 <div class="shape"></div>
                 <div class="shape"></div>
@@ -84,7 +95,7 @@ class login extends Component {
                     <button className="buttonstyle" type="submit">Login</button>
                     <div class="social">
                         <div className='fb'> <a href='/admin'> ADMIN </a> </div>
-                        <div className='fb'> <a href="/">REGISTER</a></div>
+                        <div className='fb'> <a href="/register">REGISTER</a></div>
                         </div>
                     
                 

@@ -1,8 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+
    
   .card {
     margin: 20px;
@@ -43,10 +39,15 @@
   /* CARD BACKGROUNDS */
   
   .card-1 {
-    background: radial-gradient(#8ed3bc, #58d5c9);
+    background:rgba(49, 48, 48, 0.308) ;
   }
   
   /* RESPONSIVE */
- 
-  
-  
+table{
+  text-align:left;
+  margin-left: 10px;
+}
+td{
+  padding:2%;
+}
+

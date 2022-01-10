@@ -25,7 +25,7 @@ export class Info extends Component {
     render() {
         const {users}= this.state
         return (
-            <div style={{ color: "white"}}>
+            <div style={{ color: "white"}} >
                 <h4>Hi, {users.name}</h4>
                 {users.placement && <PlacementUser/>}
                 {users.preplacement && <PrePlacementUser/>}

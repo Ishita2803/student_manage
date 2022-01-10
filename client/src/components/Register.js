@@ -3,7 +3,6 @@ import './Styles/mainpage.css'
 import {withRouter} from 'react-router-dom'
 import axios from 'axios'
 
-
 class register extends Component {
     constructor(props) {
         super(props)
@@ -88,17 +87,16 @@ class register extends Component {
 
                         <div class="float-container">
                             <div class="float-child">
-                                {/* <select class="form-select">
-                                <option selected> Enter year </option>
+                                <select class="form-select">
                                     <option value=''> TE </option>
                                     <option value=''> BE </option>
-                                </select> */}
-                                <input type="text" 
+                                </select>
+                                {/* <input type="text" 
                                     value={year} 
                                     className='inputStyle'
                                     name='year'
                                     onChange={this.handleOnChange}
-                                    placeholder='Year' required />
+                                    placeholder='Year' required /> */}
                                 </div>
                             
                         
@@ -139,7 +137,7 @@ class register extends Component {
                     
                         <button className="buttonstyle" type="submit">Submit</button>
                         <div class="social">
-                        <a href="/login"> Already an Account ?  Click here</a>
+                        <a href="/"> Already an Account ?  Click here</a>
                         </div>
                         
                     
