@@ -7,7 +7,7 @@ import Home from './components/Home';
 import Register from './components/Register';
 import Admin from './components/Admin';
 import AdminHome from './components/AdminHome';
-import Placement from './components/Placement';
+import AdminPlacement from './components/AdminPlacement';
 import PlacementUser from './components/PlacementUser';
 import Info from './components/Info';
 
@@ -21,7 +21,7 @@ function App() {
       <Route exact path="/home" component={Home}/>
       <Route exact path="/admin" component={Admin}/>
       <Route exact path="/admin/home" component={AdminHome}/>
-      <Route exact path="/admin/placement" component={Placement}/>
+      <Route exact path="/admin/placement" component={AdminPlacement}/>
       <Route exact path="/placement" component={PlacementUser}/>
       <Route exact path="/info" component={Info}/>
     </Switch>

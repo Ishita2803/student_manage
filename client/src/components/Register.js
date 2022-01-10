@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './form.css'
+import './Styles/mainpage.css'
 import {withRouter} from 'react-router-dom'
 import axios from 'axios'
 
@@ -61,27 +61,29 @@ class register extends Component {
                 
                 
                 <center>
-                <form onSubmit={this.handleSubmit} style={{height: "610px", width: "600px"}}> 
-                    <h3>Registration Page</h3>
+                <form onSubmit={this.handleSubmit} style={{height: "610px", width: "600px"}} className='mainform'> 
+                    <h3 >Registration Page</h3>
                     
-                        <label>Name : </label>
+                        <label className='labelStyle'>Name : </label>
                         <input type="text" ref={this.inputRef} 
+                        className='inputStyle'
                         value={name} 
                         name='name'
                         onChange={this.handleOnChange}
                         placeholder='Name' required />
 
-                        <label>PRN : </label>
+                        <label className='labelStyle'>PRN : </label>
                         <input type="text" 
+                        className='inputStyle'
                         value={prn} 
                         name='prn'
                         onChange={this.handleOnChange}
                         placeholder='prn' required />
 
                         <div class="float-container">
-                            <div class="float-child"><label>Year:</label></div>
+                            <div class="float-child"><label className='labelStyle'>Year:</label></div>
                       
-                                   <div class="float-child"><label>Branch:</label></div>
+                                   <div class="float-child"><label className='labelStyle'>Branch:</label></div>
                         </div>
 
                         <div class="float-container">
@@ -93,6 +95,7 @@ class register extends Component {
                                 </select> */}
                                 <input type="text" 
                                     value={year} 
+                                    className='inputStyle'
                                     name='year'
                                     onChange={this.handleOnChange}
                                     placeholder='Year' required />
@@ -101,6 +104,7 @@ class register extends Component {
                         
                             <div class="float-child"><input type="text" 
                                 value={branch} 
+                                className='inputStyle'
                                 name='branch'
                                 onChange={this.handleOnChange}
                                 placeholder='Branch' required style={{marginBottom:""}}/>
@@ -109,28 +113,31 @@ class register extends Component {
                         
                         </div>
                     
-                        <label>Email ID : </label>
+                        <label className='labelStyle'>Email ID : </label>
                         <input type="email" 
                         placeholder='Email id'
+                        className='inputStyle'
                         value={email}
                         name='email'
                         onChange={this.handleOnChange} required/>
                    
-                        <label>Password : </label>
+                        <label className='labelStyle'>Password : </label>
                         <input type="password" 
                         placeholder='Password'
+                        className='inputStyle'
                         value={password}
                         name='password'
                         onChange={this.handleOnChange} required/>
                     
-                        <label>Confim password : </label>
+                        <label className='labelStyle'>Confim password : </label>
                         <input type="password" 
                         placeholder='Confirm password'
+                        className='inputStyle'
                         name='password2'
                         value={password2}
                         onChange={this.handleOnChange} required/>
                     
-                        <button type="submit">Submit</button>
+                        <button className="buttonstyle" type="submit">Submit</button>
                         <div class="social">
                         <a href="/login"> Already an Account ?  Click here</a>
                         </div>

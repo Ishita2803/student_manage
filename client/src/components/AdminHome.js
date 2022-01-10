@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {withRouter} from 'react-router-dom'
+import './Styles/button.css'
 
 export class AdminHome extends Component {
     handlePlacement= event=>{
@@ -9,9 +10,9 @@ export class AdminHome extends Component {
     render() {
         return (
             <div>
-                <button className="btn btn-dark" onClick={this.handlePreplace}>Pre-placement</button>
-                <button className="btn btn-dark" onClick={this.handlePlacement}>placement</button>
-                <button className="btn btn-dark" onClick={this.handleHigher}>Higher Studies</button>
+                <button class="glow-on-hover" type="button" onClick={this.handlePreplace}>Pre-placement</button>
+                <button class="glow-on-hover" type="button" onClick={this.handlePlacement}>Placement</button>
+                <button class="glow-on-hover" type="button" onClick={this.handleHigher}>Higher Studies</button>
             </div>
         )
     }
