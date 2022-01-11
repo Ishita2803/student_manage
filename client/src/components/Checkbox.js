@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types'; 
-
+import './Styles/checkbox.css'
+import axios from 'axios'
 
 class Checkbox extends Component {
   state = {
@@ -25,15 +26,14 @@ class Checkbox extends Component {
 
     return (
       <div className="checkbox">
-        <label className='labelStyle'>
+        <label className='labelStyle labelStyle1'>
           <input
-            className='inputStyle'
+            className='inputStyle inputStyle1'
             type="checkbox"
             value={label}
             checked={isChecked}
             onChange={this.toggleCheckboxChange}
           />
-
           {label}
         </label>
       </div>
