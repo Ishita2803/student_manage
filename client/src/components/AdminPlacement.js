@@ -55,8 +55,7 @@ export class Placement extends Component {
 
             <center>
             
-                <form style={{height: "820px", width: "1000px"}} className='mainform' onSubmit={this.handleSubmit}>
-                    <br></br><br></br>
+                <form style={{height: "820px", width: "1000px"}} className='mainform extra' onSubmit={this.handleSubmit}>
                 <h3 className="align">New placement Update</h3>
                 <div>
                     <label className='labelStyle'>Company Name : </label>

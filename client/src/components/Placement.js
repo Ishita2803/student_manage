@@ -48,15 +48,13 @@ export class Placement extends Component {
     render() {
         return (
             <>
-            <div class="background">
-                    <div class="shape"></div>
-                    <div class="shape"></div>
-            </div>
+            {/* <div className="background">
+                    <div className="shape"></div>
+                    <div className="shape"></div>
+            </div> */}
 
             <center>
-            
-                <form style={{height: "820px", width: "1000px"}} className='mainform' onSubmit={this.handleSubmit}>
-                    <br></br><br></br>
+                <form className='mainform' onSubmit={this.handleSubmit}>
                 <h3 className="align">New placement Update</h3>
                 <div>
                     <label className='labelStyle'>Company Name : </label>

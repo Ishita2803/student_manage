@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { withRouter } from 'react-router-dom';
 import './Styles/placement.css'
-import 'react-bootstrap'
-
 
 
 export class PlacementUser extends Component {
@@ -26,7 +24,7 @@ export class PlacementUser extends Component {
     render() {
         return (
             <div className='container'>
-                <h1>Placement</h1>
+                <h2>Placement Opportunities</h2>
                 <div class="row">
                 {this.state.contents.reverse().map(content=>
                 <div key={content._id} class="card card-1">

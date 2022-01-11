@@ -3,6 +3,7 @@ import {withRouter} from 'react-router-dom'
 import axios from 'axios'
 import PlacementUser from './PlacementUser'
 import PrePlacementUser from './PrePlacementUser'
+import Navbar1 from './Navbar1'
 
 export class Info extends Component {
     constructor(props) {
@@ -26,8 +27,10 @@ export class Info extends Component {
         const {users}= this.state
         return (
             <div style={{ color: "white"}} >
-                <h4>Hi, {users.name}</h4>
+                <Navbar1 user={users.name}/>
+                <br></br>
                 {users.placement && <PlacementUser/>}
+                <br></br>
                 {users.preplacement && <PrePlacementUser/>}
             </div>
         )

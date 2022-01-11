@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {withRouter} from 'react-router-dom'
 import './Styles/button.css'
+import Navbar1 from './Navbar1'
 
 export class AdminHome extends Component {
     handlePlacement= event=>{
@@ -10,6 +11,8 @@ export class AdminHome extends Component {
     render() {
         return (
             <div>
+                <Navbar1 user='Admin'/>
+                <br></br>
                 <button class="glow-on-hover" type="button" onClick={this.handlePreplace}>Pre-placement</button>
                 <button class="glow-on-hover" type="button" onClick={this.handlePlacement}>Placement</button>
                 <button class="glow-on-hover" type="button" onClick={this.handleHigher}>Higher Studies</button>
