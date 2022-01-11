@@ -25,8 +25,9 @@ class Checkbox extends Component {
 
     return (
       <div className="checkbox">
-        <label>
+        <label className='labelStyle'>
           <input
+            className='inputStyle'
             type="checkbox"
             value={label}
             checked={isChecked}

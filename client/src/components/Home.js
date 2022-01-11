@@ -67,9 +67,9 @@ export class Home extends Component {
     render() {
         return (
         <div>
-                <form onSubmit={this.handleFormSubmit}>
+                <form onSubmit={this.handleFormSubmit} style={{height: "650px", width: "400px"}} className='mainform'>
                 {this.createCheckboxes()}
-                <button className="btn btn-light" type="submit">Save</button>
+                <button className="buttonstyle" type="submit">Save</button>
                 </form>
         </div>
         );
