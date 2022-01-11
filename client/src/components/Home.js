@@ -2,13 +2,29 @@ import React, { Component } from 'react'
 import {withRouter} from 'react-router-dom'
 import Checkbox from "./Checkbox";
 import axios from 'axios'
-
+import Navbar1 from './Navbar1'
 
 const items = ["Pre-Placement", "Placement", "Higher Studies"];
 
 export class Home extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            users:[]
+        }
+    }
+    
     componentWillMount = () => {
         this.selectedCheckboxes = new Set();
+            const {state} = this.props.location
+        axios.get(`http://localhost:5000/api/users/register/${state}`)
+        .then(res=>{
+            const users=res.data;
+            console.log(users);
+            this.setState({
+                users
+            })
+        })
     }
     
     toggleCheckbox = label => {
@@ -65,8 +81,10 @@ export class Home extends Component {
     )
     
     render() {
+        const {users}= this.state
         return (
         <div>
+            <Navbar1 user={users.name}/>
                 <form onSubmit={this.handleFormSubmit} style={{height: "650px", width: "400px"}} className='mainform'>
                 {this.createCheckboxes()}
                 <button className="buttonstyle" type="submit">Save</button>

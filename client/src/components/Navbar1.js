@@ -15,7 +15,7 @@ export class Navbar1 extends Component {
               </Navbar.Brand>
               <Navbar.Collapse className="justify-content-end">
               <Navbar.Text>
-                Signed in as: <a href="#">{this.props.user}</a>&nbsp;
+                Signed in as: <a href="#">{this.props.user}</a>&nbsp;&nbsp;&nbsp;
               </Navbar.Text>
               </Navbar.Collapse>
           </Navbar>

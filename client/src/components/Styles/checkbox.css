@@ -1,0 +1,17 @@
+.checkbox{
+	display: flex !important;
+	flex-direction: row;
+    margin-left: 10%;
+    margin-right: 0;
+}
+.labelStyle1{
+	float: left;
+	width: 80%;
+    margin-bottom: 20px;
+}
+.inputStyle1{
+	float: right;
+	width: 20%;
+    margin-top: 0;
+    height: 140%;
+}
