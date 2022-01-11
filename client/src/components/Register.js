@@ -39,7 +39,7 @@ class register extends Component {
         .then(res=>{
             if(Object.values(res.data)[0]=== this.state.name) {
                 alert('Registration successful');
-                this.props.history.push("./login");
+                this.props.history.push("./");
             }
             else{
                 alert(Object.values(res.data)[0]);
@@ -87,9 +87,11 @@ class register extends Component {
 
                         <div class="float-container">
                             <div class="float-child">
-                                <select class="form-select">
-                                    <option value=''> TE </option>
-                                    <option value=''> BE </option>
+                                <select className="inputStyle" onChange={this.handleOnChange} name='year' value={year}>
+                                    <option selected style={{backgroundColor:"lightslategrey"}}>Enter Year</option>
+                                    <option value="SE" style={{backgroundColor:"lightslategrey"}}> SE </option>
+                                    <option value="TE" style={{backgroundColor:"lightslategrey"}}> TE </option>
+                                    <option value="BE" style={{backgroundColor:"lightslategrey"}}> BE </option>
                                 </select>
                                 {/* <input type="text" 
                                     value={year} 
@@ -100,12 +102,22 @@ class register extends Component {
                                 </div>
                             
                         
-                            <div class="float-child"><input type="text" 
+                            <div class="float-child">
+                            <select className="inputStyle" onChange={this.handleOnChange} name='branch' value={branch}>
+                                    <option selected style={{backgroundColor:"lightslategrey"}}>Enter Branch</option>
+                                    <option value="CE" style={{backgroundColor:"lightslategrey"}}> CE </option>
+                                    <option value="IT" style={{backgroundColor:"lightslategrey"}}> IT </option>
+                                    <option value="Mech" style={{backgroundColor:"lightslategrey"}}> Mech </option>
+                                    <option value="Extc" style={{backgroundColor:"lightslategrey"}}> Extc </option>
+                                    <option value="Ppt" style={{backgroundColor:"lightslategrey"}}> Ppt </option>
+                                    
+                                </select>
+                            {/* <input type="text" 
                                 value={branch} 
                                 className='inputStyle'
                                 name='branch'
                                 onChange={this.handleOnChange}
-                                placeholder='Branch' required style={{marginBottom:""}}/>
+                                placeholder='Branch' required style={{marginBottom:""}}/> */}
                             </div>
                      
                         

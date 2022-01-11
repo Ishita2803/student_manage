@@ -21,6 +21,12 @@ export class PlacementUser extends Component {
         })
     } 
 
+    handleDescription=(event)=>{
+        this.setState({
+            [event.target.name]:event.target.value
+        });
+    }
+
     render() {
         return (
             <div className='container'>
@@ -29,7 +35,8 @@ export class PlacementUser extends Component {
                 {this.state.contents.reverse().map(content=>
                 <div key={content._id} class="card card-1">
                         <h3 className='card-title'>{content.company}</h3>
-                        <p>{content.companydescription} </p>
+                        {/* <p>{content.companydescription.length>20?content.companydescription.substring(0,20)+"...":content.companydescription} </p> */}
+                        {<p>{content.companydescription}</p>}
                         <table>
                             <tr>
                                 <td>Location:</td>
