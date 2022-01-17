@@ -10,6 +10,8 @@ import AdminHome from './components/AdminHome';
 import AdminPlacement from './components/AdminPlacement';
 import PlacementUser from './components/PlacementUser';
 import Info from './components/Info';
+import AdminPreplace from './components/AdminPreplace'
+import AdminHigherEd from './components/AdminHigherEd'
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
       <Route exact path="/admin" component={Admin}/>
       <Route exact path="/admin/home" component={AdminHome}/>
       <Route exact path="/admin/placement" component={AdminPlacement}/>
+      <Route exact path="/admin/preplacement" component={AdminPreplace}/>
+      <Route exact path="/admin/higherEducation" component={AdminHigherEd}/>
       <Route exact path="/placement" component={PlacementUser}/>
       <Route exact path="/info" component={Info}/>
     </Switch>

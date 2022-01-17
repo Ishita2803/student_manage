@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 // Create Schema
+
 const UserSchema = new Schema({
   name: {
     type: String,
@@ -41,6 +42,11 @@ const UserSchema = new Schema({
   higherstudies:{
     type: Boolean,
     default: false
-  }
+  },
+  marks:[{
+    id: {type: Number},
+    sem: {type: Number}
+  }]
 });
+
 module.exports = User = mongoose.model("users", UserSchema);

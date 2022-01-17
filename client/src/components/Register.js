@@ -93,12 +93,6 @@ class register extends Component {
                                     <option value="TE" style={{backgroundColor:"lightslategrey"}}> TE </option>
                                     <option value="BE" style={{backgroundColor:"lightslategrey"}}> BE </option>
                                 </select>
-                                {/* <input type="text" 
-                                    value={year} 
-                                    className='inputStyle'
-                                    name='year'
-                                    onChange={this.handleOnChange}
-                                    placeholder='Year' required /> */}
                                 </div>
                             
                         
@@ -112,14 +106,8 @@ class register extends Component {
                                     <option value="Ppt" style={{backgroundColor:"lightslategrey"}}> Ppt </option>
                                     
                                 </select>
-                            {/* <input type="text" 
-                                value={branch} 
-                                className='inputStyle'
-                                name='branch'
-                                onChange={this.handleOnChange}
-                                placeholder='Branch' required style={{marginBottom:""}}/> */}
                             </div>
-                     
+                    
                         
                         </div>
                     

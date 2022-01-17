@@ -2,31 +2,27 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 // Create Schema
 const HigherStudiesSchema = new Schema({
-  marks12: {
-    type: Number,
-    required: true
-  },
-  cgpa: {
-    type: Number,
-    required: true
-  },
-  activeKt: {
-    type: Number,
-    required: true
-  },
-  university: {
+  sname: {
     type: String,
     required: true
   },
-  location:{
-      type:String,
+  speaker: {
+    type: String,
+    required: true
+  },
+  platform: {
+    type: String,
+    required: true
+  },
+  date: {
+    type: Date,
+    required: true
+  },
+  duration:{
+      type: String,
       required:true
   },
-  lor:{
-      type:String,
-      required:true
-  },
-  field:{
+  link:{
       type:String,
       required:true
   }

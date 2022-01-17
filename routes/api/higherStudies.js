@@ -5,13 +5,12 @@ const User = require("../../models/HigherStudies");
 
 router.post("/form", async(req, res) => {
     const newUser = new User({
-        marks12: req.body.marks12,
-        cgpa: req.body.cgpa,
-        activeKt: req.body.activeKt,
-        university: req.body.university,
-        location: req.body.location,
-        lor: req.body.lor,
-        field: req.body.field
+        sname: req.body.sname,
+        speaker: req.body.speaker,
+        platform: req.body.platform,
+        date: req.body.date,
+        duration: req.body.duration,
+        link: req.body.link,
       });
       try {
         const data= await newUser.save()
@@ -22,5 +21,17 @@ router.post("/form", async(req, res) => {
         });
     }
   });
+
+router.get("/view", async(req,res)=>{
+    try {
+        const data=await User.find()
+        res.send(data)
+        console.log(req.body);
+    } catch (err) {
+        res.status(500).send({
+            message: err.message || "Some error occurred while retrieving users."
+            });
+    }
+})
 
   module.exports = router;

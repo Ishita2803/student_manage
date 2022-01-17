@@ -123,6 +123,16 @@ router.put('/higherstudies/:id',async(req,res)=>{
       res.send(error)
   }
 })
+router.put('/marks/:id',async(req,res)=>{
+  try {
+      const user = await User.findById(req.params.id)
+      user.marks = req.body.marks
+      const data = await user.save()
+      res.json(data)
+  } catch (error) {
+      res.send(error)
+  }
+})
 
 router.get('/register/:id',async(req,res)=>{
   try {

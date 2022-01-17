@@ -8,6 +8,14 @@ export class AdminHome extends Component {
         event.preventDefault()
         this.props.history.push('./placement')
     }
+    handleHigher= event=>{
+        event.preventDefault()
+        this.props.history.push('./higherEducation')
+    }
+    handlePreplace= event=>{
+        event.preventDefault()
+        this.props.history.push('./preplacement')
+    }
     render() {
         return (
             <div>
