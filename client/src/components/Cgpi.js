@@ -6,14 +6,21 @@ export class Cgpi extends Component {
         super(props)
     
         this.state = {
-            semester:this.props.sem,
             marks:0,
         }
     }
     
     async componentDidUpdate(){
-        console.log(this.state.semester, this.state.marks);
-    }
+        if(this.state.marks)
+        {const user={
+            marks:this.state.marks
+        }
+        await axios.put(`http://localhost:5000/api/users/marks/${this.props.id}/${this.props.sem}`,user)
+        .then(res=>{
+            console.log(res.data);
+            } ).catch(err=> alert(err))}
+        }
+    
 
     handleOnChange=async(event)=>{
         this.setState({
@@ -25,7 +32,7 @@ export class Cgpi extends Component {
         return (
             <div>
                 <label>sem {this.props.sem + 1} </label>
-                <input value={this.state.marks} onChange={this.handleOnChange} type="number" style={{"color": "black"}} />
+                <input value={this.state.marks} onChange={this.handleOnChange} type="number" style={{"color": "black"}} required="true" />
             </div>
         )
     }

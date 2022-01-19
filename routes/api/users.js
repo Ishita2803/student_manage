@@ -123,10 +123,10 @@ router.put('/higherstudies/:id',async(req,res)=>{
       res.send(error)
   }
 })
-router.put('/marks/:id',async(req,res)=>{
+router.put('/marks/:id/:obj',async(req,res)=>{
   try {
       const user = await User.findById(req.params.id)
-      user.marks = req.body.marks
+      user.marks[req.params.obj] = req.body.marks
       const data = await user.save()
       res.json(data)
   } catch (error) {
