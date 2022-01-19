@@ -47,6 +47,10 @@ const UserSchema = new Schema({
     id: {type: Number},
     sem: {type: Number}
   }]
+  // marks:{
+  //   type:[Number],
+  //   default:[0,0,0,0,0,0,0,0]
+  // }
 });
 
 module.exports = User = mongoose.model("users", UserSchema);

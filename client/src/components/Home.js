@@ -3,6 +3,7 @@ import {withRouter} from 'react-router-dom'
 import Checkbox from "./Checkbox";
 import axios from 'axios'
 import Navbar1 from './Navbar1'
+import Marks from './Marks';
 
 const items = ["Pre-Placement", "Placement", "Higher Studies"];
 
@@ -87,6 +88,7 @@ export class Home extends Component {
             <Navbar1 user={users.name}/>
                 <form onSubmit={this.handleFormSubmit} style={{height: "650px", width: "400px"}} className='mainform'>
                 {this.createCheckboxes()}
+                <Marks id={this.props.location.state}/>
                 <button className="buttonstyle" type="submit">Save</button>
                 </form>
         </div>
