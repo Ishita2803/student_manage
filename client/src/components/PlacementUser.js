@@ -31,8 +31,9 @@ export class PlacementUser extends Component {
         return (
             <div className='container'>
                 <h2>Placement Opportunities</h2>
+                <p>{this.props.acgpi}</p>
                 <div class="row">
-                {this.state.contents.reverse().map(content=>
+                {this.state.contents.filter(content=> content.cgpa <= this.props.acgpi).reverse().map(content=>
                 <div key={content._id} class="card card-1">
                         <h3 className='card-title'>{content.company}</h3>
                         {/* <p>{content.companydescription.length>20?content.companydescription.substring(0,20)+"...":content.companydescription} </p> */}

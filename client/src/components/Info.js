@@ -10,7 +10,8 @@ export class Info extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            users:[]
+            users:[],
+            acgpi:0
         }
     }
     componentWillMount = () => {
@@ -22,6 +23,18 @@ export class Info extends Component {
             this.setState({
                 users
             })
+            let avgcgpi=0
+            let i=0
+            this.state.users.marks.forEach(mark => {
+                if(mark !== null){
+                    avgcgpi+= mark
+                    i++
+                }
+            });
+            avgcgpi=avgcgpi/i
+            this.setState({
+                acgpi:avgcgpi
+            })
         })
     }
     render() {
@@ -30,7 +43,7 @@ export class Info extends Component {
             <div style={{ color: "white"}} >
                 <Navbar1 user={users.name}/>
                 <br></br>
-                {users.placement && <PlacementUser/>}
+                {users.placement && <PlacementUser acgpi={this.state.acgpi}/>}
                 <br></br>
                 {users.preplacement && <PrePlacementUser/>}
                 <br></br>
