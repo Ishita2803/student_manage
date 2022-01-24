@@ -71,9 +71,9 @@ class login extends Component {
                         <h5 className='loginh3'>Students can choose their preference accordingly</h5>
                 </div>
             </header>
-            <div class="background">
-                <div class="shape"></div>
-                <div class="shape"></div>
+            <div className="background">
+                <div className="shape"></div>
+                <div className="shape"></div>
             </div>
             
             <form onSubmit={this.handleSubmit} style={{height: "400px", width: "500px"}} className='mainform'>
@@ -93,7 +93,7 @@ class login extends Component {
                     onChange={this.handlePassword} required />
                 <br/>
                     <button className="buttonstyle" type="submit">Login</button>
-                    <div class="social">
+                    <div className="social">
                         <div className='fb'> <a href='/admin'> ADMIN </a> </div>
                         <div className='fb'> <a href="/register">REGISTER</a></div>
                         </div>

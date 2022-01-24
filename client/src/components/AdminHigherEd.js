@@ -42,9 +42,9 @@ export class AdminHigherEd extends Component {
         return (
             
                 <>
-            <div class="background">
-                    <div class="shape"></div>
-                    <div class="shape"></div>
+            <div className="background">
+                    <div className="shape"></div>
+                    <div className="shape"></div>
             </div>
 
             <center>
@@ -55,7 +55,6 @@ export class AdminHigherEd extends Component {
                     <label className='labelStyle'>Session Name </label>
                     <input className='inputStyle' type="text" 
                     name="sname"
-                    className='inputStyle'
                     value={this.state.sname}
                     onChange={this.handleOnClick}
                     />

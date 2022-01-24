@@ -48,9 +48,9 @@ export class Placement extends Component {
     render() {
         return (
             <>
-            <div class="background">
-                    <div class="shape"></div>
-                    <div class="shape"></div>
+            <div className="background">
+                    <div className="shape"></div>
+                    <div className="shape"></div>
             </div>
 
             <center>

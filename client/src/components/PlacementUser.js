@@ -32,9 +32,9 @@ export class PlacementUser extends Component {
             <div className='container'>
                 <h2>Placement Opportunities</h2>
                 <p>{this.props.acgpi}</p>
-                <div class="row">
+                <div className="row">
                 {this.state.contents.filter(content=> content.cgpa <= this.props.acgpi).reverse().map(content=>
-                <div key={content._id} class="card card-1">
+                <div key={content._id} className="card card-1">
                         <h3 className='card-title'>{content.company}</h3>
                         {/* <p>{content.companydescription.length>20?content.companydescription.substring(0,20)+"...":content.companydescription} </p> */}
                         {/* <ReadMoreReact text={content.companydescription} /> */}
@@ -75,7 +75,7 @@ export class PlacementUser extends Component {
                             
                         </table>
                         <br></br>
-                        <a href={content.link} class="card__link">Register</a>
+                        <a href={content.link} className="card__link">Register</a>
                         </div>
                     )}
                     </div>

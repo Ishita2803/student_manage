@@ -28,14 +28,13 @@ export class Admin extends Component {
     }
     render() {
         return (
-            <><div class="background">
-                <div class="shape"></div>
-                <div class="shape"></div>
+            <><div className="background">
+                <div className="shape"></div>
+                <div className="shape"></div>
             </div><form onSubmit={this.handleSubmit} style={{ height: "350px", width: "500px" }} className='mainform'>
                     <h3 className="align">Hello Admin</h3>
                     <label className='labelStyle'>Email ID: </label>
                     <input className='inputStyle' type="email" 
-                    className='inputStyle'
                     name='email'
                     value={this.state.email}
                     onChange={this.handleOnClick}required />

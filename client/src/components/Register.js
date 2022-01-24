@@ -53,9 +53,9 @@ class register extends Component {
             const {name,email,password,password2,year,prn,branch}= this.state
             return (
                 <>
-                <div class="background">
-                    <div class="shape"></div>
-                    <div class="shape"></div>
+                <div className="background">
+                    <div className="shape"></div>
+                    <div className="shape"></div>
                 </div>
                 
                 
@@ -79,14 +79,14 @@ class register extends Component {
                         onChange={this.handleOnChange}
                         placeholder='prn' required />
 
-                        <div class="float-container">
-                            <div class="float-child"><label className='labelStyle'>Year:</label></div>
+                        <div className="float-container">
+                            <div className="float-child"><label className='labelStyle'>Year:</label></div>
                       
-                                   <div class="float-child"><label className='labelStyle'>Branch:</label></div>
+                                   <div className="float-child"><label className='labelStyle'>Branch:</label></div>
                         </div>
 
-                        <div class="float-container">
-                            <div class="float-child">
+                        <div className="float-container">
+                            <div className="float-child">
                                 <select className="inputStyle" onChange={this.handleOnChange} name='year' value={year}>
                                     <option selected style={{backgroundColor:"lightslategrey"}}>Enter Year</option>
                                     <option value="SE" style={{backgroundColor:"lightslategrey"}}> SE </option>
@@ -96,7 +96,7 @@ class register extends Component {
                                 </div>
                             
                         
-                            <div class="float-child">
+                            <div className="float-child">
                             <select className="inputStyle" onChange={this.handleOnChange} name='branch' value={branch}>
                                     <option selected style={{backgroundColor:"lightslategrey"}}>Enter Branch</option>
                                     <option value="CE" style={{backgroundColor:"lightslategrey"}}> CE </option>
@@ -136,7 +136,7 @@ class register extends Component {
                         onChange={this.handleOnChange} required/>
                     
                         <button className="buttonstyle" type="submit">Submit</button>
-                        <div class="social">
+                        <div className="social">
                         <a href="/"> Already an Account ?  Click here</a>
                         </div>
                         

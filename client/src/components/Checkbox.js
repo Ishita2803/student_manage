@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types'; 
 import './Styles/checkbox.css'
-import axios from 'axios'
 
 class Checkbox extends Component {
   state = {

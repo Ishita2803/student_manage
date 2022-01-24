@@ -5,9 +5,9 @@ export class AdminPreplace extends Component {
         return (
             <div>
                 <>
-            <div class="background">
-                    <div class="shape"></div>
-                    <div class="shape"></div>
+            <div className="background">
+                    <div className="shape"></div>
+                    <div className="shape"></div>
             </div>
 
             <center>
