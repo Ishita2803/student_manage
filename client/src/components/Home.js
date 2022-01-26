@@ -84,16 +84,20 @@ export class Home extends Component {
     )
     
     render() {
-        const {users}= this.state
+        const {users}= this.state;
         return (
-        <div>
+            <div>
             <Navbar1 user={users.name}/>
-                <form onSubmit={this.handleFormSubmit} style={{height: "650px", width: "400px"}} className='mainform'>
-                {this.createCheckboxes()}
-                <Marks id={this.props.location.state}/>
-                <button className="buttonstyle" type="submit">Save</button>
-                </form>
-        </div>
+                <div className="mainform1">
+                    <center>
+                    <form onSubmit={this.handleFormSubmit} >
+                    {this.createCheckboxes()}
+                        <Marks id={this.props.location.state}/>
+                        <button className="buttonstyle" type="submit">Save</button>
+                    </form>
+                    </center>
+                </div>
+            </div>
         );
     }
     }

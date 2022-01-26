@@ -47,7 +47,7 @@ export class Info extends Component {
                 <br></br>
                 {users.preplacement && <PrePlacementUser/>}
                 <br></br>
-                {users.higherstudies && <HigherEdUser/>}
+                {users.higherstudies && <HigherEdUser name={users.name} prn={users.prn} />}
             </div>
         )
     }

@@ -5,6 +5,7 @@ const passport = require("passport");
 const users = require("./routes/api/users");
 const placement = require("./routes/api/placement");
 const higherStudies = require("./routes/api/higherStudies")
+const interested = require("./routes/api/interested")
 const app = express();
 const cors = require("cors");
 
@@ -35,6 +36,7 @@ require("./config/passport")(passport);
 app.use("/api/users", users);
 app.use("/api/placement", placement);
 app.use("/api/higherStudies", higherStudies);
+app.use("/api/interested", interested);
 
 
 const port = process.env.PORT || 5000; 

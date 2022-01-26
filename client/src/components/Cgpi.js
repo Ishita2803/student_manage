@@ -31,8 +31,8 @@ export class Cgpi extends Component {
     render() {
         return (
             <div>
-                <label>sem {this.props.sem + 1} </label>
-                <input value={this.state.marks} onChange={this.handleOnChange} type="number" style={{"color": "black"}} required="true" />
+                <label className='labelStyle'>sem {this.props.sem + 1} </label>
+                <input className='inputStyle' value={this.state.marks} onChange={this.handleOnChange} type="number" style={{"color": "white"}} required="true" />
             </div>
         )
     }

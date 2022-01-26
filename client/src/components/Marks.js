@@ -35,12 +35,13 @@ class Marks extends Component {
         console.log();
         return (
             <div >
-                <label >Currently studying in sem : </label>
+                <label className='labelStyle' >Currently studying in sem : </label>
                 <div className='checkbox'>
-                <input type="number" style={{"color": "black"}}
+                <input type="number" style={{"margin": "10px 10px 20px 0px", "color": "white"}}
                 value={this.state.sem}
+                className='inputStyle'
                 onChange={this.handleSem} required="true" />
-                <button onClick= {this.handleSubmit} style={{"color": "black"}} >Submit</button>
+                <button onClick= {this.handleSubmit} style={{"color": "black"}} className="buttonstyle1" >Submit</button>
                 </div>
                 {this.state.cgpi.length === 0 ? <div></div> : 
                 this.state.cgpi.map((cgi)=><Cgpi key={cgi} sem={cgi} id={this.props.id}/>)
