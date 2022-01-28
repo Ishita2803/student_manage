@@ -134,6 +134,19 @@ router.put('/marks/:id/:obj',async(req,res)=>{
   }
 })
 
+router.get("/view", async(req,res)=>{
+  try {
+      const data=await User.find()
+      res.send(data)
+      console.log(req.body);
+  } catch (err) {
+      res.status(500).send({
+          message: err.message || "Some error occurred while retrieving users."
+          });
+  }
+})
+
+
 router.get('/register/:id',async(req,res)=>{
   try {
     const data = await User.findById(req.params.id)

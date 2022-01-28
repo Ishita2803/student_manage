@@ -63,11 +63,11 @@ export class Navbar1 extends Component {
                 <Nav.Link href="#features">Features</Nav.Link>
                 <Nav.Link href="#pricing">Home</Nav.Link>
                 <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                  <NavDropdown.Item href="#action/3.1">Preplacement</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2">Higher Education</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.3">Preplacement</NavDropdown.Item>
+                  {this.props.place && <NavDropdown.Item href="#action/3.1">Preplacement</NavDropdown.Item>}
+                  {this.props.higher && <NavDropdown.Item href="#action/3.2">Higher Education</NavDropdown.Item>}
+                  {this.props.preplace && <NavDropdown.Item href="#action/3.3">Preplacement</NavDropdown.Item>}
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4">Logout</NavDropdown.Item>
+                  <NavDropdown.Item href="/">Logout</NavDropdown.Item>
                 </NavDropdown>
               </Nav>
               <Nav>

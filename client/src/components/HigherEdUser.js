@@ -61,7 +61,7 @@ export class HigherEdUser extends Component {
                                     <td class="card__link">{content.link}</td>
                                 </tr>
                             </table>
-                            <button onClick={()=>this.handleOnClick(content.sname)}>Interested</button>
+                            <button onClick={()=>this.handleOnClick(content.sname)} className="buttonstyle3" >Interested</button>
                         </div>
                     )}
                 </div>

@@ -41,7 +41,7 @@ export class Info extends Component {
         const {users}= this.state
         return (
             <div style={{ color: "white"}} >
-                <Navbar1 user={users.name}/>
+                <Navbar1 user={users.name} place={users.placement} higher={users.higherstudies} preplace={users.preplacement}/>
                 <br></br>
                 {users.placement && <PlacementUser acgpi={this.state.acgpi}/>}
                 <br></br>

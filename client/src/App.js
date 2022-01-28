@@ -12,6 +12,7 @@ import PlacementUser from './components/PlacementUser';
 import Info from './components/Info';
 import AdminPreplace from './components/AdminPreplace'
 import AdminHigherEd from './components/AdminHigherEd'
+import InterestedHigher from './components/InterestedHigher'
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
       <Route exact path="/admin/higherEducation" component={AdminHigherEd}/>
       <Route exact path="/placement" component={PlacementUser}/>
       <Route exact path="/info" component={Info}/>
+      <Route exact path="/test" component={InterestedHigher}/>
     </Switch>
     </BrowserRouter>
     </div>

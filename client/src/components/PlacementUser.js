@@ -21,12 +21,6 @@ export class PlacementUser extends Component {
         })
     } 
 
-    handleDescription=(event)=>{
-        this.setState({
-            [event.target.name]:event.target.value
-        });
-    }
-
     render() {
         return (
             <div className='container'>
