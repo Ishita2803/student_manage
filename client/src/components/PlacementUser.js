@@ -22,12 +22,13 @@ export class PlacementUser extends Component {
     } 
 
     render() {
+        var g1 = new Date();
         return (
             <div className='container'>
                 <h2>Placement Opportunities</h2>
                 <p>{this.props.acgpi}</p>
                 <div className="row">
-                {this.state.contents.filter(content=> content.cgpa <= this.props.acgpi).reverse().map(content=>
+                {this.state.contents.filter(content=> content.cgpa <= this.props.acgpi  && g1.getTime() <= new Date(content.enddate)).reverse().map(content=>
                 <div key={content._id} className="card card-1">
                         <h3 className='card-title'>{content.company}</h3>
                         {/* <p>{content.companydescription.length>20?content.companydescription.substring(0,20)+"...":content.companydescription} </p> */}

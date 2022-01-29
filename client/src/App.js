@@ -29,7 +29,7 @@ function App() {
       <Route exact path="/admin/higherEducation" component={AdminHigherEd}/>
       <Route exact path="/placement" component={PlacementUser}/>
       <Route exact path="/info" component={Info}/>
-      <Route exact path="/test" component={InterestedHigher}/>
+      <Route exact path="/admin/higherstudies/analytics" component={InterestedHigher}/>
     </Switch>
     </BrowserRouter>
     </div>

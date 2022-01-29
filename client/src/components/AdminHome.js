@@ -21,9 +21,12 @@ export class AdminHome extends Component {
             <div>
                 <Navbar1 user='Admin'/>
                 <br></br>
-                <button className="glow-on-hover" type="button" onClick={this.handlePreplace}>Pre-placement</button>
+                <button className="glow-on-hover" type="button" onClick={this.handlePreplace}>Pre-placement</button> 
+                <a href="./preplacement/analytics">Get Information</a><br/><br/>
                 <button className="glow-on-hover" type="button" onClick={this.handlePlacement}>Placement</button>
+                <a href="./placement/analytics">Get Information</a><br/><br/>
                 <button className="glow-on-hover" type="button" onClick={this.handleHigher}>Higher Studies</button>
+                <a href="./higherstudies/analytics">Get Information</a>
             </div>
         )
     }

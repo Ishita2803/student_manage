@@ -50,7 +50,7 @@ export class HigherEdUser extends Component {
                                 </tr>
                                 <tr>
                                     <td>When : </td>
-                                    <td>{content.date}</td>
+                                    <td>{content.date.toString().substring(0,10)}</td>
                                 </tr>
                                 <tr>
                                     <td>Time : </td>
