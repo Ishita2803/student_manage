@@ -14,7 +14,7 @@ export class PlacementUser extends Component {
     }
 
     componentWillMount(){
-        axios.get(`http://localhost:5000/api/placement/view`)
+        axios.get(`/api/placement/view`)
         .then(res=>{
             const contents=res.data
             this.setState({contents})

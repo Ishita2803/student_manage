@@ -15,7 +15,7 @@ class InterestedHigher extends Component {
     }
 
     componentDidMount(){
-        axios.get(`http://localhost:5000/api/interested/view`)
+        axios.get(`/api/interested/view`)
         .then(res=>{
             const users=res.data
             this.setState({iusers:res.data})

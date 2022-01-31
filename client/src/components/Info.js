@@ -16,7 +16,7 @@ export class Info extends Component {
     }
     componentWillMount = () => {
         const {state} = this.props.location
-        axios.get(`http://localhost:5000/api/users/register/${state}`)
+        axios.get(`/api/users/register/${state}`)
         .then(res=>{
             const users=res.data;
             console.log(users);

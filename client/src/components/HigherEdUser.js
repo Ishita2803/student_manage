@@ -12,7 +12,7 @@ export class HigherEdUser extends Component {
     }
 
     componentWillMount(){
-        axios.get(`http://localhost:5000/api/higherStudies/view`)
+        axios.get(`/api/higherStudies/view`)
         .then(res=>{
             const contents=res.data
             this.setState({contents})
@@ -24,7 +24,7 @@ export class HigherEdUser extends Component {
             name:this.props.name,
             prn:this.props.prn,
         }
-        axios.post(`http://localhost:5000/api/interested/higher`,user)
+        axios.post(`/api/interested/higher`,user)
         .then(res=>{
                 console.log(res);
             }

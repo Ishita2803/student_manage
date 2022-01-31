@@ -31,11 +31,11 @@ class login extends Component {
             email:this.state.email,
             password:this.state.password,
         }
-        axios.post(`http://localhost:5000/api/users/login`,user)
+        axios.post(`/api/users/login`,user)
         .then(res=>{ 
             if(Object.values(res.data)[0]=== true){
                 const id =Object.values(res.data)[2]
-                axios.get(`http://localhost:5000/api/users/register/${id}`)
+                axios.get(`/api/users/register/${id}`)
                 .then(res1=>{
                     const loguser=res1.data;
                     if(loguser.preplacement || loguser.placement || loguser.higherstudies){

@@ -15,7 +15,7 @@ export class Cgpi extends Component {
         {const user={
             marks:this.state.marks
         }
-        await axios.put(`http://localhost:5000/api/users/marks/${this.props.id}/${this.props.sem}`,user)
+        await axios.put(`/api/users/marks/${this.props.id}/${this.props.sem}`,user)
         .then(res=>{
             console.log(res.data);
             } ).catch(err=> alert(err))}

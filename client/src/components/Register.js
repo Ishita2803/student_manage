@@ -35,7 +35,7 @@ class register extends Component {
             branch:this.state.branch,
             year: this.state.year
         }
-        axios.post(`http://localhost:5000/api/users/register`,user)
+        axios.post(`/api/users/register`,user)
         .then(res=>{
             if(Object.values(res.data)[0]=== this.state.name) {
                 alert('Registration successful');

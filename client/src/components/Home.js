@@ -18,7 +18,7 @@ export class Home extends Component {
     componentWillMount = () => {
         this.selectedCheckboxes = new Set();
             const {state} = this.props.location
-        axios.get(`http://localhost:5000/api/users/register/${state}`)
+        axios.get(`/api/users/register/${state}`)
         .then(res=>{
             const users=res.data;
             console.log(users);
@@ -60,7 +60,7 @@ export class Home extends Component {
                 higherstudies:true
             }
         }
-        await axios.put(`http://localhost:5000/api/users/${checkbox.toLowerCase().replace(/[^A-Z0-9]/ig, "")}/${state}`,user)
+        await axios.put(`/api/users/${checkbox.toLowerCase().replace(/[^A-Z0-9]/ig, "")}/${state}`,user)
         .then(res=>{
             console.log(res.data);
             } ).catch(err=> alert(err))

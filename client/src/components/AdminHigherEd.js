@@ -31,7 +31,7 @@ export class AdminHigherEd extends Component {
             duration:this.state.duration,
             link:this.state.link,
         }
-        axios.post(`http://localhost:5000/api/higherStudies/form`,user)
+        axios.post(`/api/higherStudies/form`,user)
         .then(res=>{
                 alert('successful Posted')
             }

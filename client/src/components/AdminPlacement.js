@@ -38,7 +38,7 @@ export class Placement extends Component {
             branch:this.state.branch,
             link: this.state.link
         }
-        axios.post(`http://localhost:5000/api/placement/form`,user)
+        axios.post(`/api/placement/form`,user)
         .then(res=>{
                 alert('successful Posted')
             }
