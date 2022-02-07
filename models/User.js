@@ -46,6 +46,9 @@ const UserSchema = new Schema({
   marks:{
     type:[Number],
     default:[null,null,null,null,null,null,null,null]
+  },
+  img:{
+    type: String
   }
 });
 

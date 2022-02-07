@@ -6,7 +6,8 @@ const keys = require("../../config/keys");
 const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
 const User = require("../../models/User");
-
+const multer = require('multer');
+const {v4 : uuidv4} = require('uuid')
 
 // Register user
 router.post("/register", (req, res) => {
@@ -161,6 +162,54 @@ router.get('/register/:id',async(req,res)=>{
     });
 }
 })
+const DIR = './public/';
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, DIR);
+    },
+    filename: (req, file, cb) => {
+        const fileName = file.originalname.toLowerCase().split(' ').join('-');
+        cb(null, uuidv4() + '-' + fileName)
+    }
+});
+var upload = multer({
+    storage: storage,
+    fileFilter: (req, file, cb) => {
+        if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg" || file.mimetype == "application/pdf") {
+            cb(null, true);
+        } else {
+            cb(null, false);
+            return cb(new Error('Only .png, .jpg, .jpeg, .pdf format allowed!'));
+        }
+    }
+});
+// User model
+router.put('/user-profile/:id',upload.single('img'),async(req,res)=>{
+  try {
+      const user = await User.findById(req.params.id)
+      const url='http://localhost:5000'+ '/public/' + req.file.filename
+      user.img = url
+      const data = await user.save()
+      res.send(data)
+      console.log(data);
+  } catch (error) {
+      res.send(error)
+  }
+})
+// router.put('/user-profile/:id', upload.single('img'), async(req, res) => {
+//     const url = 'http' + '://' + 'localhost:5000'
+//     try{
+//       const user = User.findById(req.params.id)
+//       user.img =  url + '/public/' + req.file.filename
+//       console.log(user.prn)
+//       const data= await user.save()
+//       res.send(data.prn)
+//       // console.log(data)
+//     }catch(error){
+//       res.send(error)
+//     }
+// })
+
 
 
 module.exports = router;

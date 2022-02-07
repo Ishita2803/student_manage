@@ -37,6 +37,16 @@ export class Info extends Component {
             })
         })
     }
+    
+    handleSubmit= event=> {
+        event.preventDefault()
+        this.props.history.push({
+            pathname:"./upload",
+            state: this.state.users._id
+        })
+    }
+
+
     render() {
         const {users}= this.state
         return (
@@ -48,6 +58,7 @@ export class Info extends Component {
                 {users.preplacement && <PrePlacementUser/>}
                 <br></br>
                 {users.higherstudies && <HigherEdUser name={users.name} prn={users.prn} />}
+                <button onClick={this.handleSubmit}>Upload</button>
             </div>
         )
     }
