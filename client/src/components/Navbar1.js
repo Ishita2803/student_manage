@@ -2,6 +2,7 @@ import React, {Component } from 'react'
 import { Container ,Navbar,NavDropdown,Nav} from 'react-bootstrap';
 import logo from './logo.png'
 import './Styles/placement.css'
+import Backbutton from './Backbutton';
 
 function Navbar1(props) {
 
@@ -15,15 +16,20 @@ function Navbar1(props) {
               <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarNavDropdown">
-              <ul className="navbar-nav">
+              <ul className="navbar-nav me-auto order-0">
                 <li className="nav-item">{props.place && <a className="nav-link active" aria-current="page" href="#">Placement</a>}</li>
                 <li className="nav-item">{props.higher && <a className="nav-link active" aria-current="page" href="#">Higher Education</a>}</li>
                 <li className="nav-item">{props.preplace && <a className="nav-link active" aria-current="page" href="#">Preplacement</a>}</li>
                 {/* <li className="nav-item navbar-right" >
                   {props.user != 'Admin' && <a className="nav-link active" aria-current="page" href="./upload" >Upload</a>}
-                </li> */}
+                </li>  */}
+                
                   <span className="nav-link active" aria-current="page" >Signed in as: {props.user}</span>
               </ul>
+                <ul className="navbar-nav ms-auto order-5">
+                <span className="nav-link active" aria-current="page" >Signed in as: {props.user}</span>
+                    <li className="nav-item "><Backbutton back={props.pre}/></li>
+                </ul>
             </div>
           </div>
         </nav>

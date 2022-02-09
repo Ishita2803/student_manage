@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
+import Backbutton from './Backbutton'
 
 export class AdminPreplace extends Component {
     render() {
         return (
             <div>
                 <>
+            <Backbutton back={this.props.history}/>
             <div className="background">
                     <div className="shape"></div>
                     <div className="shape"></div>

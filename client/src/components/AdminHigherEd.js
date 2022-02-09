@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {withRouter} from 'react-router-dom'
 import axios from 'axios'
+import Backbutton from './Backbutton'
 
 export class AdminHigherEd extends Component {
     constructor(props) {
@@ -12,7 +13,7 @@ export class AdminHigherEd extends Component {
             platform:'',
             date:'',
             duration:'',
-            link:''
+            link:'',
         }
     }
 
@@ -37,11 +38,16 @@ export class AdminHigherEd extends Component {
             }
             ).catch(err=> alert(err))
     }
+    handleBack=event=>{
+        this.props.history.goBack();
+    }
     
     render() {
         return (
             
                 <>
+                {/* <button onClick={this.handleBack}><i class="fas fa-arrow-left"></i></button> */}
+                <Backbutton back={this.props.history}/>
             <div className="background">
                     <div className="shape"></div>
                     <div className="shape"></div>
@@ -104,7 +110,7 @@ export class AdminHigherEd extends Component {
                 </div>
             </form>
             </center>
-            </>  
+        </>
         )
     }
 }

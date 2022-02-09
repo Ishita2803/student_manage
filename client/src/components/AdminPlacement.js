@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {withRouter} from 'react-router-dom'
 import axios from 'axios'
 import './Styles/mainpage.css'
-
+import Backbutton from './Backbutton'
 
 export class Placement extends Component {
     constructor(props) {
@@ -48,6 +48,7 @@ export class Placement extends Component {
     render() {
         return (
             <>
+            <Backbutton back={this.props.history}/>
             <div className="background">
                     <div className="shape"></div>
                     <div className="shape"></div>

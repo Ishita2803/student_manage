@@ -32,10 +32,16 @@ export class Upload extends Component {
     <div>
          <div className="container">
                 <div className="row">
-                    <form onSubmit={this.onSubmit}>
+                    <form onSubmit={this.onSubmit} className='mainformupload'>
                         <div className="form-group">
-                            <input type="file" onChange={this.onFileChange} />
-                            <button className="btn btn-primary" type="submit">Upload</button>
+                            <div className="float-container">
+                                <div className="float-child">
+                                    <input type="file" onChange={this.onFileChange} className='inputStyle'/>
+                                </div>
+                                <div className="float-child">
+                                    <button className="btn btn-primary" type="submit">Upload</button>
+                                </div>
+                            </div>              
                         </div>
                     </form>
                 </div>
