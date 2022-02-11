@@ -23,7 +23,8 @@ function Navbar1(props) {
                 {/* <li className="nav-item navbar-right" >
                   {props.user != 'Admin' && <a className="nav-link active" aria-current="page" href="./upload" >Upload</a>}
                 </li>  */}
-                
+                <li className="nav-item"><a className="nav-link active" aria-current="page" href="/logout">Logout</a></li>
+
                   <span className="nav-link active" aria-current="page" >Signed in as: {props.user}</span>
               </ul>
                 <ul className="navbar-nav ms-auto order-5">

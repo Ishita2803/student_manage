@@ -14,6 +14,7 @@ import AdminPreplace from './components/AdminPreplace'
 import AdminHigherEd from './components/AdminHigherEd'
 import InterestedHigher from './components/InterestedHigher'
 import Upload from './components/Upload';
+import Logout from './components/Logout';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
       <Route exact path="/info" component={Info}/>
       <Route exact path="/admin/higherstudies/analytics" component={InterestedHigher}/>
       <Route exact path="/upload" component={Upload}/>
+      <Route exact path="/logout" component={Logout}/>
     </Switch>
     </BrowserRouter>
     </div>

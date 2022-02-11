@@ -20,11 +20,12 @@ export class HigherEdUser extends Component {
     } 
     handleOnClick=(topicname,event)=>{
         const user={
+            domain:"Higher Education",
             topic:topicname,
             name:this.props.name,
             prn:this.props.prn,
         }
-        axios.post(`/api/interested/higher`,user)
+        axios.post(`/api/interested/user`,user)
         .then(res=>{
                 console.log(res);
             }

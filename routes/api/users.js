@@ -210,6 +210,11 @@ router.put('/user-profile/:id',upload.single('img'),async(req,res)=>{
 //     }
 // })
 
+router.get('/logout',(req,res)=>{
+  console.log("Logout page");
+  res.clearCookie('jwtoken');
+  res.status.send("User logout");
+});
 
 
 module.exports = router;

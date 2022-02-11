@@ -3,8 +3,8 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const users = require("./routes/api/users");
-const placement = require("./routes/api/preplacement");
-const preplacement = require("./routes/api/placement");
+const preplacement = require("./routes/api/preplacement");
+const placement = require("./routes/api/placement");
 const higherStudies = require("./routes/api/higherStudies")
 const interested = require("./routes/api/interested")
 const app = express();
@@ -40,7 +40,7 @@ app.use("/api/users", users);
 app.use("/api/placement", placement);
 app.use("/api/higherStudies", higherStudies);
 app.use("/api/interested", interested);
-app.use("/api/preplacement", interested);
+app.use("/api/preplacement", preplacement);
 
 
 if(process.env.NODE_ENV === "production"){

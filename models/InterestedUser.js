@@ -3,6 +3,10 @@ const Schema = mongoose.Schema;
 // Create Schema
 
 const InterestedSchema = new Schema({
+  domain:{
+    type: String,
+    required: true
+  },
   topic: {
     type: String,
     required: true

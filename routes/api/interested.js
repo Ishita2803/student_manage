@@ -3,12 +3,13 @@ const router = express.Router();
 const User = require("../../models/InterestedUser");
 
 
-router.post("/higher", async(req, res) => {
+router.post("/user", async(req, res) => {
     User.findOne({topic:req.body.topic , prn: req.body.prn  }).then(user => {
         if (user) {
                     return res.status(200).json({ message: "already exists" });
                 }else {
                     const newUser = new User({
+                        domain: req.body.domain,
                         topic: req.body.topic,
                         prn: req.body.prn,
                         name: req.body.name
