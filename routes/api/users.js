@@ -7,7 +7,9 @@ const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
 const User = require("../../models/User");
 const multer = require('multer');
-const {v4 : uuidv4} = require('uuid')
+const {v4 : uuidv4} = require('uuid');
+const Authenticate= require("../../validation/authenticate");
+const passport=require("passport");
 
 // Register user
 router.post("/register", (req, res) => {
@@ -75,7 +77,7 @@ const email = req.body.email;
           payload,
           keys.secretOrKey,
           {
-            expiresIn: 31556926 // 1 year in seconds
+            expiresIn: 1 // 1 year in seconds
           },
           (err, token) => {
             res.json({
@@ -212,8 +214,12 @@ router.put('/user-profile/:id',upload.single('img'),async(req,res)=>{
 
 router.get('/logout',(req,res)=>{
   console.log("Logout page");
-  res.clearCookie('jwtoken');
+  //res.clearCookie('jwtoken');
   res.status.send("User logout");
+});
+
+router.post("/current",passport.authenticate('jwt',{session:false}),(req,res)=>{
+  res.send("Success");
 });
 
 

@@ -10,6 +10,7 @@ const interested = require("./routes/api/interested")
 const app = express();
 const cors = require("cors");
 
+
 // Bodyparser middleware
 app.use(
   bodyParser.urlencoded({
@@ -41,6 +42,7 @@ app.use("/api/placement", placement);
 app.use("/api/higherStudies", higherStudies);
 app.use("/api/interested", interested);
 app.use("/api/preplacement", preplacement);
+app.use("/api/current", preplacement);
 
 
 if(process.env.NODE_ENV === "production"){

@@ -12,6 +12,7 @@ const Logout = () => {
           },
           credentials:"include"
       }).then((res)=>{
+          localStorage.setItem("isAuthenticated", "false");
           history.push('/',{replace:true});
       }).catch((err)=>{
         console.log(err);

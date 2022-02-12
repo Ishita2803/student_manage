@@ -15,6 +15,7 @@ import AdminHigherEd from './components/AdminHigherEd'
 import InterestedHigher from './components/InterestedHigher'
 import Upload from './components/Upload';
 import Logout from './components/Logout';
+import PrivateRoute from './components/PrivateRoute'
 
 function App() {
   return (
@@ -25,12 +26,12 @@ function App() {
       <Route exact path="/" component={Login}/>
       <Route exact path="/home" component={Home}/>
       <Route exact path="/admin" component={Admin}/>
-      <Route exact path="/admin/home" component={AdminHome}/>
+      <PrivateRoute exact path="/admin/home" component={AdminHome}/>
       <Route exact path="/admin/placement" component={AdminPlacement}/>
       <Route exact path="/admin/preplacement" component={AdminPreplace}/>
       <Route exact path="/admin/higherEducation" component={AdminHigherEd}/>
       <Route exact path="/placement" component={PlacementUser}/>
-      <Route exact path="/info" component={Info}/>
+      <PrivateRoute exact path="/info" component={Info}/>
       <Route exact path="/admin/higherstudies/analytics" component={InterestedHigher}/>
       <Route exact path="/upload" component={Upload}/>
       <Route exact path="/logout" component={Logout}/>

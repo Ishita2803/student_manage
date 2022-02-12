@@ -5,6 +5,7 @@ import logo from './logo.png'
 import {withRouter} from 'react-router-dom'
 import axios from 'axios'
 
+
 class login extends Component {
     constructor(props) {
         super(props)
@@ -33,6 +34,7 @@ class login extends Component {
         }
         axios.post(`/api/users/login`,user)
         .then(res=>{ 
+            localStorage.setItem("isAuthenticated", "true");
             if(Object.values(res.data)[0]=== true){
                 const id =Object.values(res.data)[2]
                 axios.get(`/api/users/register/${id}`)
