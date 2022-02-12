@@ -26,6 +26,7 @@
     "passport-jwt": "^4.0.0",
     "react-bootstrap": "^2.1.0",
     "react-read-more-read-less": "^1.0.7",
+    "react-scroll": "^1.8.4",
     "read-more-react": "^1.0.10",
     "uuid": "^8.3.2",
     "validator": "^13.7.0"

@@ -23,7 +23,7 @@ export class AdminHome extends Component {
                 <br></br>
                 <button className="glow-on-hover" type="button" onClick={this.handlePreplace}>Pre-placement</button> <br/><br/>
                 <button className="glow-on-hover" type="button" onClick={this.handlePlacement}>Placement</button><br/><br/>
-                <button className="glow-on-hover" type="button" onClick={this.handleHigher}>Higher Studies</button>
+                <button className="glow-on-hover" type="button" onClick={this.handleHigher}>Higher Studies</button><br/><br/>
                 <a href="./analytics">Get Information</a>
             </div>
         )

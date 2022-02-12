@@ -34,11 +34,12 @@ export default class PrePlacementUser extends Component {
     }
 
     render() {
+        var g1 = new Date();
         return (
-            <div className='container'>
+            <div className='container' id="preplace">
                 <h2>Pre-Placement Opportunities</h2>
                 <div class="row">
-                    {this.state.contents.reverse().map(content=>
+                    {this.state.contents.filter(content=>  g1.getTime() <= new Date(content.date)).reverse().map(content=>
                         <div key={content._id} class="card card-1">
                             <h3 className='card-title'>Topic : {content.sname}</h3>
                             <table>
@@ -59,8 +60,8 @@ export default class PrePlacementUser extends Component {
                                     <td>{content.duration}</td>
                                 </tr>
                                 <tr>
-                                    <td>Link : </td>
-                                    <td class="card__link">{content.link}</td>
+                                    <td>Registration Link : </td>
+                                    <td class="card__link"><a href={content.link}>{content.link}</a></td>
                                 </tr>
                             </table>
                             <button onClick={()=>this.handleOnClick(content.sname)} className="buttonstyle3" >Interested</button>

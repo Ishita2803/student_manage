@@ -34,11 +34,12 @@ export class HigherEdUser extends Component {
     }
 
     render() {
+        var g1 = new Date();
         return (
-            <div className='container'>
+            <div className='container' id="higher">
                 <h2>Higher Education Opportunities</h2>
                 <div class="row">
-                    {this.state.contents.reverse().map(content=>
+                    {this.state.contents.filter(content => g1.getTime() <= new Date(content.date)).reverse().map(content=>
                         <div key={content._id} class="card card-1">
                             <h3 className='card-title'>Topic : {content.sname}</h3>
                             <table>
@@ -60,7 +61,7 @@ export class HigherEdUser extends Component {
                                 </tr>
                                 <tr>
                                     <td>Link : </td>
-                                    <td class="card__link">{content.link}</td>
+                                    <td class="card__link" ><a href={content.link}>{content.link}</a></td>
                                 </tr>
                             </table>
                             <button onClick={()=>this.handleOnClick(content.sname)} className="buttonstyle3" >Interested</button>

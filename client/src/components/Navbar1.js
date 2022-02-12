@@ -3,6 +3,7 @@ import { Container ,Navbar,NavDropdown,Nav} from 'react-bootstrap';
 import logo from './logo.png'
 import './Styles/placement.css'
 import Backbutton from './Backbutton';
+import {Link} from 'react-scroll'
 
 function Navbar1(props) {
 
@@ -16,20 +17,20 @@ function Navbar1(props) {
               <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarNavDropdown">
-              <ul className="navbar-nav me-auto order-0">
-                <li className="nav-item">{props.place && <a className="nav-link active" aria-current="page" href="#">Placement</a>}</li>
-                <li className="nav-item">{props.higher && <a className="nav-link active" aria-current="page" href="#">Higher Education</a>}</li>
-                <li className="nav-item">{props.preplace && <a className="nav-link active" aria-current="page" href="#">Preplacement</a>}</li>
+              <ul className="navbar-nav me-auto order-0" style={{display: 'flex', listStyle: 'none', justifyContent: 'space-around'}}>
+                <li className="nav-item">{props.place && <Link  to="place" spy={true}  className="nav-link active" aria-current="page" >Placement</Link>}</li>
+                <li className="nav-item">{props.preplace && <Link  to="preplace" spy={true} className="nav-link active" aria-current="page" >Pre-Placement</Link>}</li>
+                <li className="nav-item">{props.higher && <Link  to="higher" spy={true} className="nav-link active" aria-current="page" >Higher Education</Link>}</li>
                 {/* <li className="nav-item navbar-right" >
                   {props.user != 'Admin' && <a className="nav-link active" aria-current="page" href="./upload" >Upload</a>}
                 </li>  */}
-                <li className="nav-item"><a className="nav-link active" aria-current="page" href="/logout">Logout</a></li>
 
-                  <span className="nav-link active" aria-current="page" >Signed in as: {props.user}</span>
+                  {props.user != 'Admin' && <span className="nav-link active" aria-current="page" >Your CGPI is {props.acgpi.toFixed(2)}</span>}
               </ul>
                 <ul className="navbar-nav ms-auto order-5">
                 <span className="nav-link active" aria-current="page" >Signed in as: {props.user}</span>
-                    <li className="nav-item "><Backbutton back={props.pre}/></li>
+                <li className="nav-item"><a className="nav-link active" aria-current="page" href="/logout">Logout</a></li>
+                    {/* <li className="nav-item "><Backbutton back={props.pre}/></li> */}
                 </ul>
             </div>
           </div>

@@ -98,7 +98,7 @@ export class AdminHigherEd extends Component {
                     onChange={this.handleOnClick}/>
                 </div>
                 <div>
-                    <label className='labelStyle'>Link:</label>
+                    <label className='labelStyle'>Registration Link:</label>
                     <input type="text" 
                     className='inputStyle'
                     name="link"

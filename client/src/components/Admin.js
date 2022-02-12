@@ -19,6 +19,8 @@ export class Admin extends Component {
     handleSubmit= event =>{
         event.preventDefault()
         if(this.state.email === "admin@gmail.com" && this.state.password === "admin123"){
+            localStorage.setItem("isAdmin", "true");
+            console.log(localStorage);
             this.props.history.push('./admin/home')
         }
         else{
