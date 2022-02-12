@@ -32,7 +32,7 @@ function App() {
       <Route exact path="/admin/higherEducation" component={AdminHigherEd}/>
       <Route exact path="/placement" component={PlacementUser}/>
       <PrivateRoute exact path="/info" component={Info}/>
-      <Route exact path="/admin/higherstudies/analytics" component={InterestedHigher}/>
+      <Route exact path="/admin/analytics" component={InterestedHigher}/>
       <Route exact path="/upload" component={Upload}/>
       <Route exact path="/logout" component={Logout}/>
     </Switch>

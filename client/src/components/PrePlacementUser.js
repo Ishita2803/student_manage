@@ -28,6 +28,7 @@ export default class PrePlacementUser extends Component {
         axios.post(`/api/interested/user`,user)
         .then(res=>{
                 console.log(res);
+                alert(res.data.message)
             }
             ).catch(err=> alert(err))
     }

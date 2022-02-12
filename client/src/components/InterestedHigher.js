@@ -10,7 +10,8 @@ class InterestedHigher extends Component {
     
         this.state = {
             iusers:[],
-            topic:''
+            topic:'',
+            domain:''
         }
     }
 
@@ -25,12 +26,13 @@ class InterestedHigher extends Component {
     } 
     handleOnChange=(event)=>{
         this.setState({
-            topic:event.target.value
+            [event.target.name]:event.target.value
         });
     }
 
     render() {
-        const topics = [...new Map(this.state.iusers.map(item =>
+        const higheruser = this.state.iusers.filter(user => user.domain === this.state.domain)
+        const topics = [...new Map(higheruser.map(item =>
             [item['topic'], item])).values()];
         let srn=0
         const current = new Date();
@@ -39,6 +41,13 @@ class InterestedHigher extends Component {
             <>
             <div className='tablediv'>
             <div style={{color:"white" , marginBottom:"10px"} } >
+                <h6>Domain :  
+                    <select onChange={this.handleOnChange} name='domain' value={this.state.domain}>
+                    <option selected>Select the session</option>
+                    <option value="Higher Education">Higher Education</option>
+                    <option value="Pre-Placement">Pre-Placement</option>
+                    </select>
+                </h6>
                 <h6>Students interested in :  
                 <select onChange={this.handleOnChange} name='topic' value={this.state.topic}>
                 <option selected>Select the session</option>
@@ -56,7 +65,7 @@ class InterestedHigher extends Component {
                             </tr>
                         </thead>
                         <tbody style={{color:"white"}}>
-                        {this.state.iusers.filter(user => user.topic === this.state.topic).map(user=>
+                        {higheruser.filter(user => user.topic === this.state.topic).map(user=>
                             <tr key={user._id}>
                                 <td className='tdi'>{++srn}</td>
                                 <td className='tdi'>{user.prn}</td>

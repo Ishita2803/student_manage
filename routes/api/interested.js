@@ -6,7 +6,7 @@ const User = require("../../models/InterestedUser");
 router.post("/user", async(req, res) => {
     User.findOne({topic:req.body.topic , prn: req.body.prn  }).then(user => {
         if (user) {
-                    return res.status(200).json({ message: "already exists" });
+                    return res.status(200).json({ message: "already submitted" });
                 }else {
                     const newUser = new User({
                         domain: req.body.domain,
@@ -16,7 +16,7 @@ router.post("/user", async(req, res) => {
                     });
                     try {
                         const data=  newUser.save()
-                        res.send(data)
+                        res.send({ message: "Submitted" })
                     } catch (err) {
                         res.status(500).send({
                             message: err.message || "Some error occurred."

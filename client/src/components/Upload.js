@@ -21,7 +21,7 @@ export class Upload extends Component {
         const formData = new FormData()
         formData.append('img', this.state.img)
         console.log(formData);
-        axios.put(`http://localhost:5000/api/users/user-profile/${state}`, formData, {
+        axios.put(`/api/users/user-profile/${state}`, formData, {
         }).then(res => {
             alert('Successfully Uploaded')
         })

@@ -57,7 +57,7 @@ export class Info extends Component {
                 <br></br>
                 {users.placement && <PlacementUser acgpi={this.state.acgpi}/>}
                 <br></br>
-                {users.preplacement && <PrePlacementUser/>}
+                {users.preplacement && <PrePlacementUser name={users.name} prn={users.prn}/>}
                 <br></br>
                 {users.higherstudies && <HigherEdUser name={users.name} prn={users.prn} />}
                 <button onClick={this.handleSubmit}>Upload</button>
