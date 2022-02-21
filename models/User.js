@@ -49,7 +49,11 @@ const UserSchema = new Schema({
   },
   img:{
     type: String
-  }
+  },
+  verified: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 module.exports = User = mongoose.model("users", UserSchema);

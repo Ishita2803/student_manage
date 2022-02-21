@@ -27,10 +27,10 @@ export class Upload extends Component {
         })
     }
 
-  render() {
+render() {
     return (
     <div>
-         <div className="container">
+        <div className="container">
                 <div className="row">
                     <form onSubmit={this.onSubmit} className='mainformupload'>
                         <div className="form-group">

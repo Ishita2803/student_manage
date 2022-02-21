@@ -10,6 +10,7 @@ const multer = require('multer');
 const {v4 : uuidv4} = require('uuid');
 const Authenticate= require("../../validation/authenticate");
 const passport=require("passport");
+const sendEmail = require("../../utils/sendemail");
 
 // Register user
 router.post("/register", (req, res) => {
@@ -39,7 +40,16 @@ router.post("/register", (req, res) => {
             newUser.password = hash;
             newUser
               .save()
-              .then(user=> res.json(user))
+              .then(user=> {
+                // res.json(user)
+                try{
+                const message = `hello`;
+                sendEmail(user.email, "Verify Email", message);
+                  res.send("An Email sent to your account please verify");}
+                catch (error) {
+                  console.log(error)
+                  res.status(400).send("An error occured");
+                }})
               .catch(err => console.log(err));
           });
         });
