@@ -24,6 +24,9 @@ export default class PrePlacementUser extends Component {
             topic:topicname,
             name:this.props.name,
             prn:this.props.prn,
+            branch:this.props.branch,
+            year:this.props.year,
+
         }
         axios.post(`/api/interested/user`,user)
         .then(res=>{

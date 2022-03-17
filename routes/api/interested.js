@@ -4,7 +4,7 @@ const User = require("../../models/InterestedUser");
 
 
 router.post("/user", async(req, res) => {
-    User.findOne({topic:req.body.topic , prn: req.body.prn  }).then(user => {
+    User.findOne({topic:req.body.topic , prn: req.body.prn , year:req.body.year, branch:req.body.branch }).then(user => {
         if (user) {
                     return res.status(200).json({ message: "already submitted" });
                 }else {
@@ -12,7 +12,9 @@ router.post("/user", async(req, res) => {
                         domain: req.body.domain,
                         topic: req.body.topic,
                         prn: req.body.prn,
-                        name: req.body.name
+                        name: req.body.name,
+                        branch: req.body.branch,
+                        year: req.body.year
                     });
                     try {
                         const data=  newUser.save()

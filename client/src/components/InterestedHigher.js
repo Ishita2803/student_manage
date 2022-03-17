@@ -11,7 +11,9 @@ class InterestedHigher extends Component {
         this.state = {
             iusers:[],
             topic:'',
-            domain:''
+            domain:'',
+            branch:'',
+            year:''
         }
     }
 
@@ -54,6 +56,25 @@ class InterestedHigher extends Component {
                 {topics.map(user=><option key={user._id} >{user.topic}</option>)}
                 </select>
                 </h6>
+                <h6>Branch :  
+                    <select onChange={this.handleOnChange} name='branch' value={this.state.branch}>
+                    <option selected>Select a branch</option>
+                    <option value="CE">CE</option>
+                    <option value="IT">IT</option>
+                    <option value="Extc">Extc</option>
+                    <option value="Mech">Mech</option>
+                    <option value="Ppt">Ppt</option>
+                    </select>
+                </h6>
+
+                <h6>Year :  
+                    <select onChange={this.handleOnChange} name='year' value={this.state.year}>
+                    <option selected>Select a branch</option>
+                    <option value="SE">SE</option>
+                    <option value="TE">TE</option>
+                    <option value="BE">BE</option>
+                    </select>
+                </h6>
             </div>
             
                 <table id="table-to-xls" className='tablebox'>
@@ -65,7 +86,7 @@ class InterestedHigher extends Component {
                             </tr>
                         </thead>
                         <tbody style={{color:"white"}}>
-                        {higheruser.filter(user => user.topic === this.state.topic).map(user=>
+                        {higheruser.filter(user => user.topic === this.state.topic && user.branch === this.state.branch && user.year === this.state.year).map(user=>
                             <tr key={user._id}>
                                 <td className='tdi'>{++srn}</td>
                                 <td className='tdi'>{user.prn}</td>

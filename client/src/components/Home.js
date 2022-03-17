@@ -87,7 +87,7 @@ export class Home extends Component {
         const {users}= this.state;
         return (
             <div>
-            <Navbar1 user={users.name}/>
+            {/* <Navbar1 user={users.name}/> */}
                 <div className="mainform1">
                     <center>
                     <form onSubmit={this.handleFormSubmit} >

@@ -19,6 +19,14 @@ const InterestedSchema = new Schema({
     type: String,
     required: true
   },
+  branch:{
+    type: String,
+    required: true
+  },
+  year: {
+    type: String,
+    required: true
+  }
 });
 
 module.exports = InterestedUser = mongoose.model("interestedUser", InterestedSchema);

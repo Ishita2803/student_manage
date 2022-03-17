@@ -41,15 +41,16 @@ router.post("/register", (req, res) => {
             newUser
               .save()
               .then(user=> {
-                // res.json(user)
-                try{
-                const message = `hello`;
-                sendEmail(user.email, "Verify Email", message);
-                  res.send("An Email sent to your account please verify");}
-                catch (error) {
-                  console.log(error)
-                  res.status(400).send("An error occured");
-                }})
+                res.json(user)
+                // try{
+                // const message = `hello`;
+                // sendEmail(user.email, "Verify Email", message);
+                //   res.status(200).json({message: "An Email sent to your account please verify"});}
+                // catch (error) {
+                //   console.log(error)
+                //   res.status(400).json({message:"An error occured"});
+                // }
+              })
               .catch(err => console.log(err));
           });
         });
