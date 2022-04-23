@@ -11,7 +11,7 @@ function Navbar1(props) {
     <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
           <div className="container-fluid">
-            <img src={logo} alt="logo" width="50" height="40" />
+            {/* <img src={logo} alt="logo" width="50" height="40" /> */}
             <span className="navbar-brand">Student Portal</span>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
