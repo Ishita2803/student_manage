@@ -11,7 +11,7 @@ module.exports = function validateRegisterInput(data) {
   data.branch = !isEmpty(data.branch) ? data.branch : "";
   data.year = !isEmpty(data.year) ? data.year : "";
   
-  const emailPattern= /^([a-z\d\.-]+)@siesgst\.ac\.in$/;
+  const emailPattern= /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   const prnPattern= /^\d{3}[A-Z]{1}\d{4}$/;
   
   if(!prnPattern.test(data.prn)){
