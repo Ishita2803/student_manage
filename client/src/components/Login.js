@@ -68,7 +68,7 @@ class login extends Component {
 	            <div className="overlay">     
                 <div className='logohead'>
                         {/* <img src={logo} alt="logo" width="90" height="70"/> */}
-                        <h1 className='loginh1'>SIES GRADUATE SCHOOL OF TECHNOLOGY</h1>
+                        <h1 className='loginh1'> Placement Portal </h1>
                     </div>
                         <h5 className='loginh3'>Students can choose their preference accordingly</h5>
                 </div>
