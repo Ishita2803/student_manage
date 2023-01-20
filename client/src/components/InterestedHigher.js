@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import axios from 'axios'
-import ReactToExcel from 'react-html-table-to-excel'
+import { DownloadTableExcel } from "react-export-table-to-excel";
 import './Styles/table.css'
 
 class InterestedHigher extends Component {
@@ -96,13 +96,13 @@ class InterestedHigher extends Component {
                     </tbody>
                 </table>
             
-            <ReactToExcel
+            <DownloadTableExcel
                 className="buttonstyle3"
                 table="table-to-xls"
                 filename={filename}
                 sheet="sheet 1"
-                buttonText="Download(.xls)"
-            />
+            >
+            </DownloadTableExcel>
             </div>
             </>
         )
